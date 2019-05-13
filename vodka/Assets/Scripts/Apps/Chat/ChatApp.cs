@@ -105,6 +105,10 @@ public class ChatApp : App
             return;
         }
 
+        if(m_activeChat.finished) {
+            return;
+        }
+
         Message lastMessage = m_activeChat.GetMessage(m_activeChat.lastNode);
 
         // record the last message we saw
@@ -128,10 +132,8 @@ public class ChatApp : App
         // draw the next message
         Message nextMessage = m_activeChat.GetMessage(m_activeChat.lastNode);
         if(nextMessage == null){
-            // mark convo as complete
-            // ??
             Debug.Log("Reached end of convo at node " + m_activeChat.lastNode);
-
+            m_activeChat.finished = true;
             return;
         }
         DrawMessage(nextMessage);
@@ -269,6 +271,9 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     private void CloseChat () {
         foreach(Transform child in ChatBubblesParent.transform) {
+            Destroy(child.gameObject);
+        }
+        foreach(Transform child in ChatOptionsParent.transform) {
             Destroy(child.gameObject);
         }
         m_activeChat = null;

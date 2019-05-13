@@ -84,6 +84,9 @@ public class Chat {
     // the index (in 'messages') of the last node read
     public int lastNode = 0;
 
+    // whether or not the convo is finished
+    public bool finished;
+
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
