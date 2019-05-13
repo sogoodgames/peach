@@ -55,9 +55,10 @@
             "node" : 7,
             "player" : "true",
             "clueGiven" : "NoClue",
-            "messages" : [
+            "options" : [
                 "i didn’t even know half the ppl there and it was MY PLACE lol"
             ],
+            "clueNeeded" : ["NoClue"],
             "branch" : [8]
         },
         {
@@ -69,6 +70,242 @@
                 "i didnt expect them to also… invite a lot of friends…"
             ],
             "branch" : [9]
+        },
+        {
+            "node" : 9,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "RILEY"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [10]
+        },
+        {
+            "node" : 10,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "RILEY I FOUND A SHOE",
+                "ASGASLGKHSDKLG"
+            ],
+            "branch" : [11]
+        },
+        {
+            "node" : 11,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "lmao WHAT",
+                "so it was that kind of party huh??"
+            ],
+            "branch" : [12]
+        },
+        {
+            "node" : 12,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "oh my god it smells like… flavored vodka??"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [13]
+        },
+        {
+            "node" : 13,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "like peach or cake or something??"
+            ],
+            "branch" : [14]
+        },
+        {
+            "node" : 14,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "wHATT",
+                "wait did u just sniff a shoe????"
+            ],
+            "branch" : [15]
+        },
+        {
+            "node" : 15,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "RILEY I THINK IT’S JIN’S SHOE"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [16]
+        },
+        {
+            "node" : 16,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "Are u ignoring my shoe question??"
+            ],
+            "branch" : [17]
+        },
+        {
+            "node" : 17,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "liSTEN bUDDY, there are more pRESSING MATTERS HERE"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [18]
+        },
+        {
+            "node" : 18,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "And no, i did not smell the shoe, the shoe SMELLS okAY"
+            ],
+            "branch" : [19]
+        },
+        {
+            "node" : 19,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "got it, u sniff shoes",
+                "anyways so ur talking about that hottie you were playin beer pong with?? ;)))",
+                "the one doing the group costume as that kpop groug SGG??",
+                "omggg",
+                "guess you have to return it to him ;)))"
+            ],
+            "branch" : [20]
+        },
+        {
+            "node" : 20,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "omggggggg"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [21]
+        },
+        {
+            "node" : 21,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "this is ur opportunity to talk to him again since you didn’t get his number the first time",
+                "you dweeb"
+            ],
+            "branch" : [22]
+        },
+        {
+            "node" : 22,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "D: idk lol im not as outgoing as you",
+                "duh ;))))"
+            ],
+            "clueNeeded" : ["NoClue", "NoClue"],
+            "branch" : [23, 24]
+        },
+        {
+            "node" : 23,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "you have no choice!! hes gonna notice it’s missing eventually"
+            ],
+            "branch" : [25]
+        },
+        {
+            "node" : 24,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "HELL YEA thats what i like to hear"
+            ],
+            "branch" : [25]
+        },
+        {
+            "node" : 25,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "yah so great idea but"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [26]
+        },
+        {
+            "node" : 26,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "since i don’t have his number",
+                "uhhh",
+                "how do i give it to him"
+            ],
+            "branch" : [27]
+        },
+        {
+            "node" : 27,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "uhhhh try talking to some of the people who were at the party i guess?",
+                "maybeee",
+                "try ur friend Kyle, he knows all the nerds who were holed up playing smash",
+                "and Lucien, the guy playing keyboard for the band, ill give u his number",
+                "Oh and maybe Matt??",
+                "he was one of the guys playing beer pong",
+                "there were also some creative writing majors outside, idk them tho",
+                "and i have no idea who the ppl hanging out by the pool were",
+                "but start with those guys!"
+            ],
+            "branch" : [28]
+        },
+        {
+            "node" : 28,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "dang ok wall of text lol"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [29]
+        },
+        {
+            "node" : 29,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "you’re thorough!"
+            ],
+            "branch" : [30]
+        },
+        {
+            "node" : 30,
+            "player" : "false",
+            "clueGiven" : "NoClue",
+            "messages" : [
+                "im excited about this MYSTERY",
+                "go talk to ppl till you find your s e c r e t  b o y"
+            ],
+            "branch" : [31]
+        },
+        {
+            "node" : 31,
+            "player" : "true",
+            "clueGiven" : "NoClue",
+            "options" : [
+                "lol ok ill do my best!"
+            ],
+            "clueNeeded" : ["NoClue"],
+            "branch" : [32]
         }
     ]
 }
