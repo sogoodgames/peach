@@ -8,8 +8,11 @@ public class ChatApp : App
     // Variables
     // ------------------------------------------------------------------------
     public PhoneOS PhoneOS;
-    public ChatSelectionScreen ChatSelectionScreen;
-    public ChatScreen ChatScreen;
+    public GameObject ChatSelectionScreen;
+    public GameObject ChatScreen;
+
+    public Transform ChatButtonsParent;
+    public GameObject ChatButtonPrefab;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -17,19 +20,48 @@ public class ChatApp : App
     public override void Open() {
         base.Open();
         // always reset to chat selection bc i'm lazy lol
-        ChatSelectionScreen.Open(PhoneOS.ActiveChats);
-        ChatScreen.Close();
+        OpenChatSelection();
     }
 
     // ------------------------------------------------------------------------
     public void OpenChatSelection () {
-        ChatSelectionScreen.Open(PhoneOS.ActiveChats);
-        ChatScreen.Close();
+        ChatScreen.SetActive(false);
+
+        // populate list of chat buttons
+        // we do this every time we open the app in case it's changed
+        foreach(Chat chat in PhoneOS.ActiveChats) {
+            GameObject chatButtonObj = Instantiate(
+                ChatButtonPrefab,
+                ChatButtonsParent
+            ) as GameObject;
+
+            OpenChatButton chatButton = chatButtonObj.GetComponent<OpenChatButton>();
+            if(chatButton) {
+                // set name
+                chatButton.NameText.text = chat.friend.ToString();
+
+                // set profile pic
+                // ??
+
+                // bind button to open this chat
+                chatButton.OpenButton.onClick.AddListener(
+                    delegate {OpenChat(chat);}
+                );
+
+            } else {
+                Debug.LogError("Chat Button Prefab does not contain an OpenChatButton.");
+            }
+        }
+
+        ChatSelectionScreen.SetActive(true);
     }
 
     // ------------------------------------------------------------------------
     public void OpenChat (Chat c) {
-        ChatSelectionScreen.Close();
-        ChatScreen.Open(c);
+        //ChatSelectionScreen.SetActive(false);
+
+        Debug.Log("want to open chat: " + c.friend.ToString());
+
+        //ChatScreen.SetActive(true);
     }
 }

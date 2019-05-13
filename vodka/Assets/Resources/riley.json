@@ -1,4 +1,73 @@
 {
     "friend" : "8",
-    "unlocked" : "true"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node" : 0,
+            "player" : "false",
+            "messages" : [
+                "i just got home safe!",
+                "thanks for lettin me stay over",
+                "suPER successful halloween party in my opinion!!"
+            ],
+            "options" : [],
+            "branch" : [1]
+        },
+        {
+            "node" : 1,
+            "player" : "true",
+            "messages" : [],
+            "options" : [
+                "thanks for helpin me clean up... :/",
+                "yah, it was hella fun!"
+            ],
+            "branch" : [4, 5]
+        },
+        {
+            "node" : 4,
+            "player" : "false",
+            "messages" : [
+                "omg sorryyyy im hungover (:"
+            ],
+            "options" : [],
+            "branch" : [6]
+        },
+        {
+            "node" : 5,
+            "player" : "false",
+            "messages" : [
+                "that’s the spirit!!"
+            ],
+            "options" : [],
+            "branch" : [6]
+        },
+        {
+            "node" : 6,
+            "player" : "false",
+            "messages" : [
+                "the party got kinda big huh?"
+            ],
+            "options" : [],
+            "branch" : [7]
+        },
+        {
+            "node" : 7,
+            "player" : "true",
+            "messages" : [
+                "i didn’t even know half the ppl there and it was MY PLACE lol"
+            ],
+            "options" : [],
+            "branch" : [8]
+        },
+        {
+            "node" : 8,
+            "player" : "false",
+            "messages" : [
+                "haha yeah sorry i invited a lot of friends!",
+                "i didnt expect them to also… invite a lot of friends…"
+            ],
+            "options" : [],
+            "branch" : [9]
+        }
+    ]
 }
