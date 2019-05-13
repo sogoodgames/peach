@@ -5,68 +5,82 @@
         {
             "node" : 0,
             "player" : "false",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "i just got home safe!",
                 "thanks for lettin me stay over",
                 "suPER successful halloween party in my opinion!!"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [1]
         },
         {
             "node" : 1,
             "player" : "true",
+            "clueGiven" : "NoClue",
             "messages" : [],
             "options" : [
                 "thanks for helpin me clean up... :/",
                 "yah, it was hella fun!"
             ],
+            "clueNeeded" : ["NoClue", "NoClue"],
             "branch" : [4, 5]
         },
         {
             "node" : 4,
             "player" : "false",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "omg sorryyyy im hungover (:"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [6]
         },
         {
             "node" : 5,
             "player" : "false",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "that’s the spirit!!"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [6]
         },
         {
             "node" : 6,
             "player" : "false",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "the party got kinda big huh?"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [7]
         },
         {
             "node" : 7,
             "player" : "true",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "i didn’t even know half the ppl there and it was MY PLACE lol"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [8]
         },
         {
             "node" : 8,
             "player" : "false",
+            "clueGiven" : "NoClue",
             "messages" : [
                 "haha yeah sorry i invited a lot of friends!",
                 "i didnt expect them to also… invite a lot of friends…"
             ],
             "options" : [],
+            "clueNeeded" : [],
             "branch" : [9]
         }
     ]

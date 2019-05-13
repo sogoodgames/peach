@@ -80,15 +80,19 @@ public class PhoneOS : MonoBehaviour
             string text = textFile.text;
             if(!string.IsNullOrEmpty(text)) {
                 Chat chat = JsonUtility.FromJson<Chat>(text);
+                if(!chat.HasMessages) {
+                    Debug.LogWarning("Chat empty: " + fileName);
+                } else {
+                    // if it's unlocked from the start, increase our chat counter
+                    if(chat.unlocked) {
+                        chat.order = m_chatCounter;
+                        m_chatCounter++;
+                    }
 
-                // if it's unlocked from the start, increase our chat counter
-                if(chat.unlocked) {
-                    chat.order = m_chatCounter;
-                    m_chatCounter++;
+                    m_allChats.Add(chat);
+                    chat.Init();
+                    //Debug.Log("added chat: " + chat.friend.ToString() + "; order: " + chat.order);
                 }
-
-                m_allChats.Add(chat);
-                //Debug.Log("added chat: " + chat.friend.ToString() + "; order: " + chat.order);
             } else {
                 Debug.LogError("file empty: " + fileName);
                 break;

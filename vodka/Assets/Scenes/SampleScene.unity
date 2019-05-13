@@ -339,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &172776189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -802,6 +802,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1385425737}
+  - {fileID: 2105154868}
   - {fileID: 1503581563}
   m_Father: {fileID: 1121651227}
   m_RootOrder: 2
@@ -968,7 +969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000020903886, y: 0}
+  m_AnchoredPosition: {x: -0.000018473878, y: -0.000016290685}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &733545377
@@ -1396,6 +1397,15 @@ MonoBehaviour:
   ChatButtonsParent: {fileID: 7470853908441363795}
   ChatButtonPrefab: {fileID: 5319309144721028397, guid: 3f632d5fb983e8147b414d7f01aebc92,
     type: 3}
+  FriendTitleText: {fileID: 1503581564}
+  ChatBubblesParent: {fileID: 733545376}
+  ChatOptionsParent: {fileID: 2105154868}
+  PlayerChatBubblePrefab: {fileID: 5446078062523445711, guid: 3cbf00aa74f8aac4998d59d894858431,
+    type: 3}
+  FriendChatBubblePrefab: {fileID: 3375936244271796546, guid: 51c266c8746aecc419582f3d82f18b7b,
+    type: 3}
+  MessageOptionPrefab: {fileID: 3930444623915934498, guid: 70446af7fca64dd4a8d469cbf457947a,
+    type: 3}
 --- !u!1 &1140524366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,8 +1609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50.975}
-  m_SizeDelta: {x: 1080, y: 1553.7}
+  m_AnchoredPosition: {x: 0, y: 122.5}
+  m_SizeDelta: {x: 1080, y: 1206.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385425738
 MonoBehaviour:
@@ -1652,7 +1662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 733545376}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -1701,7 +1711,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 557253475}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2279,6 +2289,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982565825}
   m_CullTransparentMesh: 0
+--- !u!1 &2105154867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2105154868}
+  - component: {fileID: 2105154869}
+  m_Layer: 5
+  m_Name: LayoutGroup_MessageSelection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2105154868
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105154867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 557253475}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -1308.7}
+  m_SizeDelta: {x: 0, y: 347}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &2105154869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105154867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 30
+    m_Right: 30
+    m_Top: 30
+    m_Bottom: 30
+  m_ChildAlignment: 1
+  m_Spacing: 30
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!1 &2127045474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,7 +2856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 7470853908441363795}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
