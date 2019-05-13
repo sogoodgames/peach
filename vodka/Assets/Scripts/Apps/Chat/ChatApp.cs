@@ -8,7 +8,6 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    public PhoneOS PhoneOS;
     public GameObject ChatSelectionScreen;
     public GameObject ChatScreen;
 
@@ -41,6 +40,16 @@ public class ChatApp : App
         base.Close();
         CloseChatSelection();
         CloseChat();
+    }
+
+    // ------------------------------------------------------------------------
+    public override void Return() {
+        if(ChatScreen.activeInHierarchy) {
+            CloseChat();
+            OpenChatSelection();
+        } else {
+            PhoneOS.GoHome();
+        }
     }
 
     // ------------------------------------------------------------------------

@@ -15,6 +15,7 @@ public class PhoneOS : MonoBehaviour
     private List<Chat> m_allChats;
     // increases every time we unlock a new chat
     private int m_chatCounter = 0;
+    private App m_activeApp;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -44,15 +45,22 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     // Methods: Phone navigation
     // ------------------------------------------------------------------------
-    public void OpenApp(App app) {
+    public void OpenApp (App app) {
         CloseAllApps();
         app.Open();
+        m_activeApp = app;
     }
 
     // ------------------------------------------------------------------------
-    public void GoHome() {
+    public void GoHome () {
         CloseAllApps();
         HomeApp.Open();
+        m_activeApp = HomeApp;
+    }
+
+    // ------------------------------------------------------------------------
+    public void Return () {
+        m_activeApp.Return();
     }
 
     // ------------------------------------------------------------------------
