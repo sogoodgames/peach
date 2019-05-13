@@ -11,15 +11,12 @@
                 "thanks for lettin me stay over",
                 "suPER successful halloween party in my opinion!!"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [1]
         },
         {
             "node" : 1,
             "player" : "true",
             "clueGiven" : "NoClue",
-            "messages" : [],
             "options" : [
                 "thanks for helpin me clean up... :/",
                 "yah, it was hella fun!"
@@ -34,8 +31,6 @@
             "messages" : [
                 "omg sorryyyy im hungover (:"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [6]
         },
         {
@@ -45,8 +40,6 @@
             "messages" : [
                 "that’s the spirit!!"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [6]
         },
         {
@@ -56,8 +49,6 @@
             "messages" : [
                 "the party got kinda big huh?"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [7]
         },
         {
@@ -67,8 +58,6 @@
             "messages" : [
                 "i didn’t even know half the ppl there and it was MY PLACE lol"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [8]
         },
         {
@@ -79,8 +68,6 @@
                 "haha yeah sorry i invited a lot of friends!",
                 "i didnt expect them to also… invite a lot of friends…"
             ],
-            "options" : [],
-            "clueNeeded" : [],
             "branch" : [9]
         }
     ]

@@ -56,6 +56,15 @@ public class PhoneOS : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    // Methods: Clues
+    // ------------------------------------------------------------------------
+    public bool ClueRequirementMet (ClueID id) {
+        if(id == ClueID.NoClue) return true;
+        // TODO: map of clues to fulfillment 
+        else return false;
+    }
+
+    // ------------------------------------------------------------------------
     // Methods: Private
     // ------------------------------------------------------------------------
     private void CloseAllApps() {
@@ -79,7 +88,9 @@ public class PhoneOS : MonoBehaviour
 
             string text = textFile.text;
             if(!string.IsNullOrEmpty(text)) {
-                Chat chat = JsonUtility.FromJson<Chat>(text);
+                ChatSerializable chatSer = JsonUtility.FromJson<ChatSerializable>(text);
+                Chat chat = new Chat(chatSer);
+
                 if(!chat.HasMessages) {
                     Debug.LogWarning("Chat empty: " + fileName);
                 } else {
@@ -90,7 +101,6 @@ public class PhoneOS : MonoBehaviour
                     }
 
                     m_allChats.Add(chat);
-                    chat.Init();
                     //Debug.Log("added chat: " + chat.friend.ToString() + "; order: " + chat.order);
                 }
             } else {

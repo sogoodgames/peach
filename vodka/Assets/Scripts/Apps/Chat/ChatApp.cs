@@ -60,7 +60,7 @@ public class ChatApp : App
             OpenChatButton chatButton = chatButtonObj.GetComponent<OpenChatButton>();
             if(chatButton) {
                 // set name
-                chatButton.NameText.text = chat.friend.ToString();
+                chatButton.NameText.text = chat.Friend.ToString();
 
                 // set profile pic
                 // ??
@@ -83,7 +83,7 @@ public class ChatApp : App
         CloseChatSelection();
         m_activeChat = c;
 
-        Debug.Log("opening chat: " + c.friend + "; active node: " + c.lastNode);
+        Debug.Log("opening chat: " + c.Friend + "; active node: " + c.lastNode);
 
         // draw chat bubbles for all of the messages we've read so far
         foreach (Message message in c.visitedMessages) {
@@ -114,15 +114,15 @@ public class ChatApp : App
 
         // increment lastNode
         if(lastMessage.HasOptions()) {
-            if(lastMessage.optionChosen) {
+            if(lastMessage.MadeSelection()) {
                 // if we made a selection, move to the next message
-                m_activeChat.lastNode = lastMessage.branch[lastMessage.optionSelection];
+                m_activeChat.lastNode = lastMessage.Branch[lastMessage.OptionSelection];
             } else {
                 // if we have an unchosen option, don't do anything
                 return;
             }
         } else {
-            m_activeChat.lastNode = lastMessage.branch[0];
+            m_activeChat.lastNode = lastMessage.Branch[0];
         }
 
         // draw the next message
@@ -146,7 +146,7 @@ public class ChatApp : App
         //Debug.Log("drawing message: " + message.node);
 
         // draw either player or friend messages
-        if(message.player) {
+        if(message.Player) {
             // if this has options, draw them; otherwise, draw messages
             if(message.HasOptions()) {
                 DrawChatOptions(message);
@@ -171,7 +171,7 @@ public class ChatApp : App
         }
 
         // iterate over all of the messages in this node
-        foreach(string messageText in message.messages) {
+        foreach(string messageText in message.Messages) {
             // create bubble object
             GameObject bubble = Instantiate(
                 prefab,
@@ -194,7 +194,7 @@ public class ChatApp : App
             Debug.LogError("Message null.");
             return;
         }
-        if(!message.player) {
+        if(!message.Player) {
             Debug.LogError("Hecked up script config. NPC has chat options.");
             return;
         }
@@ -204,11 +204,11 @@ public class ChatApp : App
         }
 
         // if we've already chosen, draw a chat bubble
-        if(message.optionChosen) {
+        if(message.MadeSelection()) {
             CreateChatBubbles(message, PlayerChatBubblePrefab);
         } else {
             // otherwise, draw the options
-            for(int i = 0; i < message.options.Length; i++) {
+            for(int i = 0; i < message.Options.Length; i++) {
                 // draw bubble
                 GameObject option = Instantiate(
                     MessageOptionPrefab,
@@ -219,9 +219,9 @@ public class ChatApp : App
                 MessageButton messageButton = option.GetComponent<MessageButton>();
                 
                 // check if clue needs met
-                if(message.OptionAvailable(i)) {
+                if(PhoneOS.ClueRequirementMet(message.ClueNeeded[i])) {
                     // set button text & hook up option function
-                    messageButton.Text.text = message.options[i];
+                    messageButton.Text.text = message.Options[i];
                     SetButtonListener(messageButton.Button, i);
                     //Debug.Log("created option [" + message.options[i] + "] with index " + i + " for message " + message.node);
                 } else {
@@ -247,13 +247,12 @@ public class ChatApp : App
             return;
         }
 
-        Debug.Log("selected option " + option + " for message " + message.node);
+        Debug.Log("selected option " + option + " for message " + message.Node);
 
         // record in message that this option has been chosen
-        message.optionChosen = true;
-        message.optionSelection = option;
-        message.messages = new string[1];
-        message.messages[0] = message.options[option];
+        message.OptionSelection = option;
+        message.Messages = new string[1];
+        message.Messages[0] = message.Options[option];
 
         // draw chosen message
         CreateChatBubbles(message, PlayerChatBubblePrefab);
