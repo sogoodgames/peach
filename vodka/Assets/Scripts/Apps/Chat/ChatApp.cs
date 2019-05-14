@@ -96,7 +96,7 @@ public class ChatApp : App
 
         // draw chat bubbles for all of the messages we've read so far
         foreach (Message message in c.visitedMessages) {
-            DrawMessage(message);
+            DrawMessage(message, false);
         }
 
         // draw next chat
@@ -120,11 +120,6 @@ public class ChatApp : App
 
         Message lastMessage = m_activeChat.GetMessage(m_activeChat.lastNode);
 
-        // record the last message we saw
-        if(!m_activeChat.visitedMessages.Contains(lastMessage)) {
-            m_activeChat.visitedMessages.Add(lastMessage);
-        }
-
         // increment lastNode
         if(lastMessage.HasOptions()) {
             if(lastMessage.MadeSelection()) {
@@ -145,16 +140,20 @@ public class ChatApp : App
             m_activeChat.finished = true;
             return;
         }
-        DrawMessage(nextMessage);
+        DrawMessage(nextMessage, true);
     }
 
-    private void DrawMessage (Message message) {
+    private void DrawMessage (Message message, bool allowConvoMove) {
         if(message == null) {
             Debug.LogError("Message null.");
             return;
         }
 
-        //Debug.Log("drawing message: " + message.node);
+        // record that we drew this message
+        if(!m_activeChat.visitedMessages.Contains(message)) {
+            m_activeChat.visitedMessages.Add(message);
+            Debug.Log("added message: " + message.Node);
+        }
 
         // draw either player or friend messages
         if(message.Player) {
@@ -169,7 +168,7 @@ public class ChatApp : App
         }
 
         // if we're not waiting on an option selection, draw the next message
-        if(!message.HasOptions()) {
+        if(allowConvoMove && !message.HasOptions()) {
             MoveConversation();
         }
     }
