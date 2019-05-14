@@ -117,11 +117,8 @@ public class ChatApp : App
 
         // draw chat bubbles for all of the messages we've read so far
         foreach (Message message in c.visitedMessages) {
-            DrawMessage(message, false);
+            StartCoroutine(DrawMessage(message));
         }
-
-        // draw next chat
-        MoveConversation();
 
         ChatScreen.SetActive(true);
     }
@@ -161,13 +158,13 @@ public class ChatApp : App
             m_activeChat.finished = true;
             return;
         }
-        DrawMessage(nextMessage, true);
+        StartCoroutine(DrawMessage(nextMessage));
     }
 
-    private void DrawMessage (Message message, bool allowConvoMove) {
+    private IEnumerator DrawMessage (Message message) {
         if(message == null) {
             Debug.LogError("Message null.");
-            return;
+            yield break;
         }
 
         // record that we drew this message
@@ -182,27 +179,29 @@ public class ChatApp : App
             if(message.HasOptions()) {
                 DrawChatOptions(message);
             } else {
-                CreateChatBubbles(message, PlayerChatBubblePrefab);
+                yield return CreateChatBubbles(message, PlayerChatBubblePrefab);
             }
         } else {
-            CreateChatBubbles(message, FriendChatBubblePrefab);
+            yield return CreateChatBubbles(message, FriendChatBubblePrefab);
         }
 
         // if we're not waiting on an option selection, draw the next message
-        if(allowConvoMove && !message.HasOptions()) {
+        if(!message.HasOptions()) {
             MoveConversation();
         }
     }
 
     // ------------------------------------------------------------------------
-    private void CreateChatBubbles (Message message, GameObject prefab) {
+    private IEnumerator CreateChatBubbles (Message message, GameObject prefab) {
         if(message == null) {
             Debug.LogError("Message null.");
-            return;
+            yield break;
         }
 
         // iterate over all of the messages in this node
-        foreach(string messageText in message.Messages) {
+        for (int i = 0; i < message.Messages.Length; i++) {
+            yield return new WaitForSeconds(2);
+
             // create bubble object
             GameObject bubble = Instantiate(
                 prefab,
@@ -212,13 +211,13 @@ public class ChatApp : App
             // fill text with message text
             Text text = bubble.GetComponentInChildren<Text>();
             if(text) {
-                text.text = messageText;
+                text.text = message.Messages[i];
             } else {
                 Debug.LogError("No Text component found on chat bubble prefab: " + prefab);
             }
-        }
 
-        m_needsScroll = true;
+            m_needsScroll = true;
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -238,7 +237,7 @@ public class ChatApp : App
 
         // if we've already chosen, draw a chat bubble
         if(message.MadeSelection()) {
-            CreateChatBubbles(message, PlayerChatBubblePrefab);
+            StartCoroutine(CreateChatBubbles(message, PlayerChatBubblePrefab));
         } else {
             // otherwise, draw the options
             for(int i = 0; i < message.Options.Length; i++) {
@@ -288,7 +287,7 @@ public class ChatApp : App
         message.Messages[0] = message.Options[option];
 
         // draw chosen message
-        CreateChatBubbles(message, PlayerChatBubblePrefab);
+        StartCoroutine(CreateChatBubbles(message, PlayerChatBubblePrefab));
 
         // destroy option bubbles
         foreach(Transform child in ChatOptionsParent.transform) {
