@@ -29,6 +29,9 @@ public class ChatApp : App
     private bool m_needsScroll;
     private int scrollWait = 0;
 
+    private IEnumerator m_drawMessagesCoroutine;
+    private IEnumerator m_drawBubblesCoroutine;
+
     // ------------------------------------------------------------------------
     // Methods : MonoBehaviour
     // ------------------------------------------------------------------------
@@ -116,11 +119,10 @@ public class ChatApp : App
         Debug.Log("opening chat: " + c.Friend + "; active node: " + c.lastNode);
 
         // draw chat bubbles for all of the messages we've read so far
-        foreach (Message message in c.visitedMessages) {
-            StartCoroutine(DrawMessage(message));
-        }
+        DrawAllReadMessages();
 
         ChatScreen.SetActive(true);
+        MoveConversation();
     }
 
     // ------------------------------------------------------------------------
@@ -158,9 +160,15 @@ public class ChatApp : App
             m_activeChat.finished = true;
             return;
         }
-        StartCoroutine(DrawMessage(nextMessage));
+        m_drawMessagesCoroutine = DrawMessage(nextMessage);
+        StartCoroutine(m_drawMessagesCoroutine);
     }
 
+    // ------------------------------------------------------------------------
+    // 'visited' is a flag that indicates whether or not we've
+    //  already encountered these messages
+    // if we've encountered them, draw them immediately & don't move convo
+    // otherwise, draw them like natural convo & move convo
     private IEnumerator DrawMessage (Message message) {
         if(message == null) {
             Debug.LogError("Message null.");
@@ -179,10 +187,12 @@ public class ChatApp : App
             if(message.HasOptions()) {
                 DrawChatOptions(message);
             } else {
-                yield return CreateChatBubbles(message, PlayerChatBubblePrefab);
+                m_drawBubblesCoroutine = CreateChatBubbles(message, PlayerChatBubblePrefab);
+                yield return StartCoroutine(m_drawBubblesCoroutine);
             }
         } else {
-            yield return CreateChatBubbles(message, FriendChatBubblePrefab);
+            m_drawBubblesCoroutine = CreateChatBubbles(message, FriendChatBubblePrefab);
+                yield return StartCoroutine(m_drawBubblesCoroutine);
         }
 
         // if we're not waiting on an option selection, draw the next message
@@ -200,21 +210,14 @@ public class ChatApp : App
 
         // iterate over all of the messages in this node
         for (int i = 0; i < message.Messages.Length; i++) {
-            yield return new WaitForSeconds(2);
-
-            // create bubble object
-            GameObject bubble = Instantiate(
-                prefab,
-                ChatBubblesParent
-            ) as GameObject;
-
-            // fill text with message text
-            Text text = bubble.GetComponentInChildren<Text>();
-            if(text) {
-                text.text = message.Messages[i];
-            } else {
-                Debug.LogError("No Text component found on chat bubble prefab: " + prefab);
+            float t = 2;
+            if(message.Player || (message.Node == 0 && i == 0)) {
+                t = 0;
             }
+            yield return new WaitForSeconds(t);
+            //Debug.Log("drawing line: " + i);
+
+            DrawChatBubble(message.Messages[i], prefab);
 
             m_needsScroll = true;
         }
@@ -234,32 +237,30 @@ public class ChatApp : App
             Debug.LogError("Attempting to draw options for message with no options.");
             return;
         }
-
-        // if we've already chosen, draw a chat bubble
         if(message.MadeSelection()) {
-            StartCoroutine(CreateChatBubbles(message, PlayerChatBubblePrefab));
-        } else {
-            // otherwise, draw the options
-            for(int i = 0; i < message.Options.Length; i++) {
-                // draw bubble
-                GameObject option = Instantiate(
-                    MessageOptionPrefab,
-                    ChatOptionsParent
-                ) as GameObject;
+            Debug.LogError("Attempting to draw options for message that's already made selection.");
+            return;
+        }
 
-                // setup bubble
-                MessageButton messageButton = option.GetComponent<MessageButton>();
-                
-                // check if clue needs met
-                if(PhoneOS.ClueRequirementMet(message.ClueNeeded[i])) {
-                    // set button text & hook up option function
-                    messageButton.Text.text = message.Options[i];
-                    SetButtonListener(messageButton.Button, i);
-                    //Debug.Log("created option [" + message.options[i] + "] with index " + i + " for message " + message.node);
-                } else {
-                    // mark it as unavilable
-                    messageButton.Text.text = "[clue needed]";
-                }
+        for(int i = 0; i < message.Options.Length; i++) {
+            // draw bubble
+            GameObject option = Instantiate(
+                MessageOptionPrefab,
+                ChatOptionsParent
+            ) as GameObject;
+
+            // setup bubble
+            MessageButton messageButton = option.GetComponent<MessageButton>();
+            
+            // check if clue needs met
+            if(PhoneOS.ClueRequirementMet(message.ClueNeeded[i])) {
+                // set button text & hook up option function
+                messageButton.Text.text = message.Options[i];
+                SetButtonListener(messageButton.Button, i);
+                //Debug.Log("created option [" + message.options[i] + "] with index " + i + " for message " + message.node);
+            } else {
+                // mark it as unavilable
+                messageButton.Text.text = "[clue needed]";
             }
         }
     }
@@ -287,7 +288,8 @@ public class ChatApp : App
         message.Messages[0] = message.Options[option];
 
         // draw chosen message
-        StartCoroutine(CreateChatBubbles(message, PlayerChatBubblePrefab));
+        m_drawBubblesCoroutine = CreateChatBubbles(message, PlayerChatBubblePrefab);
+        StartCoroutine(m_drawBubblesCoroutine);
 
         // destroy option bubbles
         foreach(Transform child in ChatOptionsParent.transform) {
@@ -300,6 +302,13 @@ public class ChatApp : App
 
     // ------------------------------------------------------------------------
     private void CloseChat () {
+        if(m_drawMessagesCoroutine != null) {
+            StopCoroutine(m_drawMessagesCoroutine);
+        }
+        if(m_drawBubblesCoroutine != null) {
+            StopCoroutine(m_drawBubblesCoroutine);
+        }
+
         foreach(Transform child in ChatBubblesParent.transform) {
             Destroy(child.gameObject);
         }
@@ -316,5 +325,49 @@ public class ChatApp : App
             Destroy(child.gameObject);
         }
         ChatSelectionScreen.SetActive(false);
+    }
+
+    // ------------------------------------------------------------------------
+    // i know this creates a lot of duplicated code,
+    // but avoiding the coroutines is a lot more convienent 
+    // for just wanting to draw all of the read messages with no delay
+    private void DrawAllReadMessages () { 
+        foreach(Message message in m_activeChat.visitedMessages) {
+            if(message.Player) {
+                if(message.HasOptions()) {
+                    if(message.MadeSelection()) {
+                        DrawChatBubble(message.Messages[0], PlayerChatBubblePrefab);
+                    } else {
+                        DrawChatOptions(message);
+                    }
+                } else {
+                    foreach(string text in message.Messages) {
+                        DrawChatBubble(text, PlayerChatBubblePrefab);
+                    }
+                }
+            } else {
+                foreach(string text in message.Messages) {
+                    DrawChatBubble(text, FriendChatBubblePrefab);
+                }
+            }
+        }
+        m_needsScroll = true;
+    }
+
+    // ------------------------------------------------------------------------
+    private void DrawChatBubble (string text, GameObject prefab) {
+        // create bubble object
+        GameObject bubble = Instantiate(
+            prefab,
+            ChatBubblesParent
+        ) as GameObject;
+
+        // fill text with message text
+        Text textObj = bubble.GetComponentInChildren<Text>();
+        if(textObj) {
+            textObj.text = text;
+        } else {
+            Debug.LogError("No Text component found on chat bubble prefab: " + prefab);
+        }
     }
 }
