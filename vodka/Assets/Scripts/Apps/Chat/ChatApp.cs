@@ -152,7 +152,7 @@ public class ChatApp : App
         // record that we drew this message
         if(!m_activeChat.visitedMessages.Contains(message)) {
             m_activeChat.visitedMessages.Add(message);
-            Debug.Log("added message: " + message.Node);
+            //Debug.Log("added message: " + message.Node);
         }
 
         // draw either player or friend messages
