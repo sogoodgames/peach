@@ -1535,6 +1535,7 @@ MonoBehaviour:
     type: 3}
   MessageOptionPrefab: {fileID: 3930444623915934498, guid: 70446af7fca64dd4a8d469cbf457947a,
     type: 3}
+  ChatBubblesScrollRect: {fileID: 1385425740}
 --- !u!1 &1140524366
 GameObject:
   m_ObjectHideFlags: 0

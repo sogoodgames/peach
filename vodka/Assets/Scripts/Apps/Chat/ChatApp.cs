@@ -22,9 +22,30 @@ public class ChatApp : App
     public GameObject PlayerChatBubblePrefab;
     public GameObject FriendChatBubblePrefab;
     public GameObject MessageOptionPrefab;
+    public ScrollRect ChatBubblesScrollRect;
 
     // internal
     private Chat m_activeChat;
+    private bool m_needsScroll;
+    private int scrollWait = 0;
+
+    // ------------------------------------------------------------------------
+    // Methods : MonoBehaviour
+    // ------------------------------------------------------------------------
+    // why is 3 the magic number of frames to get an accurate scroll position?
+    // i have no idea.
+    // why am i not using a more elegant solution using ienumerators?
+    // because i'm tired.
+    void Update() {
+        if(m_needsScroll) {
+            scrollWait++;
+            if(scrollWait >= 3) {
+                ChatBubblesScrollRect.normalizedPosition = new Vector2(0, 0);
+                m_needsScroll = false;
+                scrollWait = 0;
+            }
+        }
+    }
 
     // ------------------------------------------------------------------------
     // Methods : App
@@ -196,6 +217,8 @@ public class ChatApp : App
                 Debug.LogError("No Text component found on chat bubble prefab: " + prefab);
             }
         }
+
+        m_needsScroll = true;
     }
 
     // ------------------------------------------------------------------------
@@ -257,7 +280,7 @@ public class ChatApp : App
             return;
         }
 
-        Debug.Log("selected option " + option + " for message " + message.Node);
+        //Debug.Log("selected option " + option + " for message " + message.Node);
 
         // record in message that this option has been chosen
         message.OptionSelection = option;
