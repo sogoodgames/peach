@@ -539,6 +539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
+  PhoneOS: {fileID: 2127045479}
+  ForumPostParent: {fileID: 2029234071}
+  ForumPostPrefab: {fileID: 7251587346829470753, guid: d96fa02a29277da4c93da4a83d2a95a2,
+    type: 3}
 --- !u!1 &172776188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,17 +2985,19 @@ MonoBehaviour:
   - {fileID: 1121651228}
   - {fileID: 1140524368}
   HomeApp: {fileID: 1640568942}
-  ChatFileNames:
-  - courtney
-  - riley
-  - emma
-  - jin
-  - kyle
-  - lucien
-  - matt
-  - melody
-  - michael
-  - taeyong
+  ChatTextAssets:
+  - {fileID: 4900000, guid: 6ec54eb0da9f263469581a17849d7c91, type: 3}
+  - {fileID: 4900000, guid: 93e39637e6f64464ab693d733f971788, type: 3}
+  - {fileID: 4900000, guid: c4fe39acba6d2ff4b87e62aa1c369ff4, type: 3}
+  - {fileID: 4900000, guid: 64151ec8da3aeb948b31bf7ef7ee7441, type: 3}
+  - {fileID: 4900000, guid: 633693ef705b7e64db7858d1b54a4fc8, type: 3}
+  - {fileID: 4900000, guid: 2eb2b4d3caa1c4c418b452a33b88f87f, type: 3}
+  - {fileID: 4900000, guid: e69893b886c9a014496d3547a1da2b00, type: 3}
+  - {fileID: 4900000, guid: b6d63c662a8ce2d47a27680661df4fbb, type: 3}
+  - {fileID: 4900000, guid: 163ee71efadbd8845bedde93d0429a39, type: 3}
+  - {fileID: 4900000, guid: b88dcd0e9bdbe754391ec338b4bb2b7a, type: 3}
+  ForumPostTextAssets:
+  - {fileID: 4900000, guid: eea0704e44fc3684d903ccb340a05d25, type: 3}
 --- !u!224 &7470853907998688416
 RectTransform:
   m_ObjectHideFlags: 0

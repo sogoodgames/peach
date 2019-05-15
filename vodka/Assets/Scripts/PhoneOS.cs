@@ -10,11 +10,16 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     public List<App> Apps;
     public App HomeApp;
-    public List<string> ChatFileNames;
+    public List<TextAsset> ChatTextAssets;
+    public List<TextAsset> ForumPostTextAssets;
 
     private List<Chat> m_allChats;
     private int m_chatCounter = 0; // increases every time we unlock a new chat
     private App m_activeApp;
+
+    private List<ForumPost> m_allForumPosts;
+    private int m_postCounter = 0; // increases every time we unlock a new forum post
+    private ForumPost m_activeForumPost;
 
     private Dictionary<ClueID, bool> m_clueLockStates;
 
@@ -33,6 +38,21 @@ public class PhoneOS : MonoBehaviour
             // sort by when they were acquired, oldest first
             activeChats = activeChats.OrderBy(c => c.order).ToList();
             return activeChats;
+        }
+    }
+
+    public List<ForumPost> ActiveForumPosts {
+        get {
+            // only add posts that are available
+            List<ForumPost> activePosts = new List<ForumPost>();
+            foreach(ForumPost p in m_allForumPosts) {
+                if(p.Unlocked) {
+                    activePosts.Add(p);
+                }
+            }
+            // sort by when they were acquired, oldest first
+            activePosts = activePosts.OrderBy(p => p.Order).ToList();
+            return activePosts;
         }
     }
 
@@ -57,6 +77,7 @@ public class PhoneOS : MonoBehaviour
         };
 
         LoadChats();
+        LoadForumPosts();
     }
     
     // ------------------------------------------------------------------------
@@ -102,20 +123,14 @@ public class PhoneOS : MonoBehaviour
     private void LoadChats() {
         m_allChats = new List<Chat>();
 
-        foreach(string fileName in ChatFileNames) {
-            var textFile = Resources.Load<TextAsset>(fileName);
-            if(textFile == null) {
-                Debug.LogError("unable to find file: " + fileName);
-                break;
-            }
-
-            string text = textFile.text;
+        foreach(TextAsset textAsset in ChatTextAssets) {
+            string text = textAsset.text;
             if(!string.IsNullOrEmpty(text)) {
                 ChatSerializable chatSer = JsonUtility.FromJson<ChatSerializable>(text);
                 Chat chat = new Chat(chatSer);
 
                 if(!chat.HasMessages) {
-                    Debug.LogWarning("Chat empty: " + fileName);
+                    Debug.LogWarning("Chat empty: " + textAsset.name);
                 } else {
                     // if it's unlocked from the start, increase our chat counter
                     if(chat.unlocked) {
@@ -127,7 +142,36 @@ public class PhoneOS : MonoBehaviour
                     //Debug.Log("added chat: " + chat.friend.ToString() + "; order: " + chat.order);
                 }
             } else {
-                Debug.LogError("file empty: " + fileName);
+                Debug.LogError("file empty: " + textAsset.name);
+                break;
+            }
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void LoadForumPosts() {
+        m_allForumPosts = new List<ForumPost>();
+
+        foreach(TextAsset textAsset in ForumPostTextAssets) {
+            string text = textAsset.text;
+            if(!string.IsNullOrEmpty(text)) {
+                ForumPostSerializable postSer = JsonUtility.FromJson<ForumPostSerializable>(text);
+                ForumPost post = new ForumPost(postSer);
+
+                if(post.Empty()) {
+                    Debug.LogWarning("Forum Post empty: " + textAsset.name);
+                } else {
+                    // if it's unlocked from the start, increase our post counter
+                    if(post.Unlocked) {
+                        post.Order = m_postCounter;
+                        m_postCounter++;
+                    }
+
+                    m_allForumPosts.Add(post);
+                    Debug.Log("added post: " + post.Username + "; order: " + post.Order);
+                }
+            } else {
+                Debug.LogError("file empty: " + textAsset.name);
                 break;
             }
         }
