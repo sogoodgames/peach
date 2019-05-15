@@ -224,12 +224,14 @@ public class ChatApp : App
             Debug.LogError("Attempting to draw options for message with no options.");
             return;
         }
-        if(message.MadeSelection()) {
-            Debug.LogError("Attempting to draw options for message that's already made selection.");
-            return;
-        }
 
         for(int i = 0; i < message.Options.Length; i++) {
+            // if we've already been to this conversation option,
+            // skip drawing whatever option we selected last time
+            if(message.MadeSelection() && i == message.OptionSelection) {
+                continue;
+            }
+
             // draw bubble
             GameObject option = Instantiate(
                 MessageOptionPrefab,
