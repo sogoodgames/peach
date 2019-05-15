@@ -69,7 +69,7 @@ public class PhoneOS : MonoBehaviour
     public bool ClueRequirementMet (ClueID id) {
         if(id == ClueID.NoClue) return true;
         // TODO: map of clues to fulfillment 
-        else return false;
+        return false;
     }
 
     // ------------------------------------------------------------------------

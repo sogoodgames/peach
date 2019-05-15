@@ -1,112 +1,147 @@
 {
-    "friend" : "4",
-    "unlocked" : "true",
-    "messages" : [
+    "friend": "4",
+    "unlocked": "true",
+    "messages": [
         {
-            "node" : 0,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
                 "hey luce!"
             ],
-            "branch" : [1]
+            "branch": [
+                1
+            ]
         },
         {
-            "node" : 1,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "options" : [
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
                 "excellent performance last night!",
                 "i love your band’s aquatic themed costumes… the lead singer girl was p cute;)"
             ],
-            "clueNeeded" : ["NoClue", "NoClue"],
-            "branch" : [2,3]
+            "clueNeeded": [
+                0,
+                0
+            ],
+            "branch": [
+                2,
+                3
+            ]
         },
         {
-            "node" : 2,
-            "player" : "false",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
                 "omg thanks!!"
             ],
-            "branch" : [4]
+            "branch": [
+                4
+            ]
         },
         {
-            "node" : 3,
-            "player" : "false",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 3,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
                 "thanks! she came up with it, but she’s taken, haha"
             ],
-            "branch" : [4]
+            "branch": [
+                4
+            ]
         },
         {
-            "node" : 4,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "options" : [
+            "node": 4,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
                 "wanted to ask you something real quick"
             ],
-            "clueNeeded" : ["NoClue", "NoClue"],
-            "branch" : [5]
+            "clueNeeded": [
+                0,
+                0
+            ],
+            "branch": [
+                5
+            ]
         },
         {
-            "node" : 5,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "options" : [
+            "node": 5,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
                 "know anything about a lost shoe?",
                 "i saw your band’s ad for your next show, who posted it?"
             ],
-            "clueNeeded" : ["NoClue", "Band"],
-            "branch" : [6,7]
+            "clueNeeded": [
+                0,
+                2
+            ],
+            "branch": [
+                6,
+                7
+            ]
         },
         {
-            "node" : 6,
-            "player" : "false",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 6,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
                 "nope sorry pal"
             ],
-            "branch" : [5]
+            "branch": [
+                5
+            ]
         },
         {
-            "node" : 7,
-            "player" : "false",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 7,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
                 "yeah! that’s the lead singer’s partner, Courtney. the couple who were both dressed as mermaids"
             ],
-            "branch" : [8]
+            "branch": [
+                8
+            ]
         },
         {
-            "node" : 8,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "options" : [
+            "node": 8,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
                 "oh cool, could you give me her number?"
             ],
-            "clueNeeded" : ["NoClue"],
-            "branch" : [9]
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                9
+            ]
         },
         {
-            "node" : 9,
-            "player" : "true",
-            "clueGiven" : "NoClue",
-            "messages" : [
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
                 "im just trying to round up ppl who went to the party"
             ],
-            "branch" : [10]
+            "branch": [
+                10
+            ]
         },
         {
-            "node" : 10,
-            "player" : "false",
-            "clueGiven" : "CourtneyPhone",
-            "messages" : [
+            "node": 10,
+            "player": "false",
+            "clueGiven": "CourtneyPhone",
+            "messages": [
                 "yeah sure!",
                 "good luck with.. whatever you’re doing??"
             ],
-            "branch" : [11]
+            "branch": [
+                11
+            ]
         }
     ]
 }
