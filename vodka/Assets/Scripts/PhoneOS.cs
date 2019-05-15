@@ -13,9 +13,10 @@ public class PhoneOS : MonoBehaviour
     public List<string> ChatFileNames;
 
     private List<Chat> m_allChats;
-    // increases every time we unlock a new chat
-    private int m_chatCounter = 0;
+    private int m_chatCounter = 0; // increases every time we unlock a new chat
     private App m_activeApp;
+
+    private Dictionary<ClueID, bool> m_clueLockStates;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -39,6 +40,22 @@ public class PhoneOS : MonoBehaviour
     // Methods: Monobehaviour
     // ------------------------------------------------------------------------
     void Awake () {
+        m_clueLockStates = new Dictionary<ClueID, bool> {
+            {ClueID.NoClue, true},
+            {ClueID.Pool, false},
+            {ClueID.Band, false},
+            {ClueID.Pizza, false},
+            {ClueID.Poetry, false},
+            {ClueID.Cow, false},
+            {ClueID.Flirt, false},
+            {ClueID.EmmaPhone, false},
+            {ClueID.TaeyongPhone, false},
+            {ClueID.CourtneyPhone, false},
+            {ClueID.JinPhone, false},
+            {ClueID.MichaelPhone, false},
+            {ClueID.MelodyPhone, false},
+        };
+
         LoadChats();
     }
     
@@ -67,9 +84,7 @@ public class PhoneOS : MonoBehaviour
     // Methods: Clues
     // ------------------------------------------------------------------------
     public bool ClueRequirementMet (ClueID id) {
-        if(id == ClueID.NoClue) return true;
-        // TODO: map of clues to fulfillment 
-        return false;
+        return m_clueLockStates[id];
     }
 
     // ------------------------------------------------------------------------
