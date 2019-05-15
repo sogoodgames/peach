@@ -33,5 +33,9 @@ public class RudditApp : App
 
     public override void Close() { 
         base.Close();
+
+        foreach(Transform t in ForumPostParent.transform) {
+            Destroy(t.gameObject);
+        }
     }
 }
