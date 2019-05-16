@@ -175,7 +175,7 @@ public class PhoneOS : MonoBehaviour
                     }
 
                     m_allForumPosts.Add(post);
-                    Debug.Log("added post: " + post.Username + "; order: " + post.Order);
+                    //Debug.Log("added post: " + post.Username + "; order: " + post.Order);
                 }
             } else {
                 Debug.LogError("file empty: " + textAsset.name);
