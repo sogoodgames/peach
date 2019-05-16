@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 519744551}
   - component: {fileID: 519744550}
   m_Layer: 5
-  m_Name: RudditPost
+  m_Name: ForumPost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7251587346829470753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5b2707056d34e45b2b252d13c0561f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb7ce91594f84804c89a40e9fbe48c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProfileImage: {fileID: 1158000887102086148}
