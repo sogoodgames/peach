@@ -1,6 +1,6 @@
 ﻿using System;   // serializable
 
-public class ForumPost
+public class ForumPostData
 {
     // ------------------------------------------------------------------------
     // Variables
@@ -36,7 +36,7 @@ public class ForumPost
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
-    public ForumPost (ForumPostSerializable post) {
+    public ForumPostData (ForumPostSerializable post) {
         m_username = post.username;
         m_title = post.title;
         m_clueGiven = post.clueGiven;

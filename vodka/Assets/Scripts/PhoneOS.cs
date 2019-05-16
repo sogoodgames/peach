@@ -17,9 +17,9 @@ public class PhoneOS : MonoBehaviour
     private int m_chatCounter = 0; // increases every time we unlock a new chat
     private App m_activeApp;
 
-    private List<ForumPost> m_allForumPosts;
+    private List<ForumPostData> m_allForumPosts;
     private int m_postCounter = 0; // increases every time we unlock a new forum post
-    private ForumPost m_activeForumPost;
+    private ForumPostData m_activeForumPost;
 
     private Dictionary<ClueID, bool> m_clueLockStates;
 
@@ -41,11 +41,11 @@ public class PhoneOS : MonoBehaviour
         }
     }
 
-    public List<ForumPost> ActiveForumPosts {
+    public List<ForumPostData> ActiveForumPosts {
         get {
             // only add posts that are available
-            List<ForumPost> activePosts = new List<ForumPost>();
-            foreach(ForumPost p in m_allForumPosts) {
+            List<ForumPostData> activePosts = new List<ForumPostData>();
+            foreach(ForumPostData p in m_allForumPosts) {
                 if(p.Unlocked) {
                     activePosts.Add(p);
                 }
@@ -150,13 +150,13 @@ public class PhoneOS : MonoBehaviour
 
     // ------------------------------------------------------------------------
     private void LoadForumPosts() {
-        m_allForumPosts = new List<ForumPost>();
+        m_allForumPosts = new List<ForumPostData>();
 
         foreach(TextAsset textAsset in ForumPostTextAssets) {
             string text = textAsset.text;
             if(!string.IsNullOrEmpty(text)) {
                 ForumPostSerializable postSer = JsonUtility.FromJson<ForumPostSerializable>(text);
-                ForumPost post = new ForumPost(postSer);
+                ForumPostData post = new ForumPostData(postSer);
 
                 if(post.Empty()) {
                     Debug.LogWarning("Forum Post empty: " + textAsset.name);

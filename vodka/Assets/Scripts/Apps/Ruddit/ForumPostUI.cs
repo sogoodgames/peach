@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class RudditPost : MonoBehaviour
+public class ForumPostUI : MonoBehaviour
 {
     public Image ProfileImage;
     public Text TitleText;
