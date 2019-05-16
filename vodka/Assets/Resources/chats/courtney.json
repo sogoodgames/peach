@@ -1,4 +1,186 @@
 {
     "friend" : "0",
-    "unlocked" : "false"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "yoooo Courtney, this is the host from the party last nite!"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "you and Justine make such a cute mermaid couple omgg",
+                "i’m trying to solve a ~mystery~, can u help?"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "omg thanks uwu",
+                "what’s the mystery? o_o"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "somebody left their shoe at my place"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                4
+            ]
+        },
+        {
+            "node": 4,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "and i’m trying to return it lmfao"
+            ],
+            "branch": [
+                5
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "aww, I thought the mystery was gonna be more exciting than that @_@",
+                "tbh, I didn’t hear about anybody losing a shoe",
+                "but lmk if you have any more specific questions??"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "i heard somebody got pushed into the pool, do you know who that was?",
+                "i saw you posted about the poetry night, do you know those ppl? they’re the only friend group i haven’t talked to yet"
+            ],
+            "clueNeeded": [
+                "Pool",
+                "Poetry"
+            ],
+            "branch": [
+                7, 8
+            ]
+        },
+        {
+            "node": 7,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "yeah, that was Carter pushing Michael into the pool >_>",
+                "why do you ask?"
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "do you have either of their contact info? maybe one of them lost a shoe, lol"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "false",
+            "clueGiven": 11,
+            "messages": [
+                "yeah, I don’t know Carter that well but I have Michael’s number",
+                "here you go",
+                "hope that helps! @_@"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 8,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "yeah, I host the poetry night with my roomie melody ^_^",
+                "she was the one dressed as a cow",
+                "shes hilarious lol owo"
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "could you give me her number?"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i’m just trying to get a hold of ppl from the night"
+            ],
+            "branch": [
+                13
+            ]
+        },
+        {
+            "node": 13,
+            "player": "false",
+            "clueGiven": 12,
+            "messages": [
+                "sure thing X3"
+            ],
+            "branch": [
+                6
+            ]
+        }
+    ]
 }
