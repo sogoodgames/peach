@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ForumApp : App
 {
@@ -16,15 +17,30 @@ public class ForumApp : App
                 ForumPostParent)
             as GameObject;
 
-            ForumPostUI Forum = postObj.GetComponent<ForumPostUI>();
-            if(Forum) {
-                Forum.TitleText.text = post.Title;
-                Forum.UsernameText.text = "u/" + post.Username;
-                Forum.MetaInfoText.text = post.NumComments
+            ForumPostUI postUI = postObj.GetComponent<ForumPostUI>();
+            if(postUI) {
+                // set all basic info
+                postUI.TitleText.text = post.Title;
+                postUI.UsernameText.text = "u/" + post.Username;
+                postUI.MetaInfoText.text = post.NumComments
                                         + " comments / posted "
                                         + post.Time
                                         + " hours ago";
-                Forum.BodyText.text = post.Body;
+                postUI.BodyText.text = post.Body;
+
+                // load profile icon
+                Sprite icon = PhoneOS.UserIconAssets[post.Icon];
+                if(icon) {
+                    postUI.ProfileImage.sprite = icon;
+                }
+
+                // load post image
+                postUI.SetPhotoContent(post.Photo, PhoneOS);
+
+                // let phone OS know when we encounter this post
+                postUI.OpenPostButton.onClick.AddListener(
+                    delegate{PhoneOS.FoundClue(post.ClueGiven);}
+                );
             }
         }
     }

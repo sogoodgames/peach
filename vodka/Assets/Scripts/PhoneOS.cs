@@ -12,6 +12,8 @@ public class PhoneOS : MonoBehaviour
     public App HomeApp;
     public List<TextAsset> ChatTextAssets;
     public List<TextAsset> ForumPostTextAssets;
+    public List<Sprite> UserIconAssets;
+    public List<Sprite> PhotoAssets;
 
     private List<Chat> m_allChats;
     private int m_chatCounter = 0; // increases every time we unlock a new chat
@@ -106,6 +108,11 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     public bool ClueRequirementMet (ClueID id) {
         return m_clueLockStates[id];
+    }
+
+    // ------------------------------------------------------------------------
+    public void FoundClue (ClueID id) {
+        m_clueLockStates[id] = true;
     }
 
     // ------------------------------------------------------------------------

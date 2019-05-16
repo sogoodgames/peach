@@ -33,6 +33,12 @@ public class ForumPostData
     private bool m_unlocked; // unlocked from beginning
     public bool Unlocked {get{return m_unlocked;}}
 
+    private int m_icon; // icon file
+    public int Icon {get{return m_icon;}}
+
+    private int m_photo; // post image file (optional)
+    public int Photo {get{return m_photo;}}
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
@@ -44,6 +50,8 @@ public class ForumPostData
         m_numComments = post.numComments;
         m_time = post.time;
         m_unlocked = post.unlocked;
+        m_icon = post.icon;
+        m_photo = post.photo;
     }
 
     // ------------------------------------------------------------------------
