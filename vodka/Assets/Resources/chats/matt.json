@@ -1,4 +1,202 @@
 {
     "friend" : "5",
-    "unlocked" : "true"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "hey dude! gj at beer pong last night lol"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "somebody left their shoe at my place lol",
+                "happen to know anything about them?"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "uhhhh definitely not",
+                "who leaves a shoe at a party?",
+                "amatuer"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "LOL"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                4
+            ]
+        },
+        {
+            "node": 4,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "wait don’t tell me that was that guy you were flirting with"
+            ],
+            "branch": [
+                5
+            ]
+        },
+        {
+            "node": 5,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "was it that obvious -__-;;",
+                "no idea what you’re talking about :)"
+            ],
+            "clueNeeded": [
+                "NoClue",
+                "NoClue"
+            ],
+            "branch": [
+                6, 7
+            ]
+        },
+        {
+            "node": 6,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "lmao, riley showed me the photographic evidence"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 7,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "suuuuuuuuuure"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "not gonna lie",
+                "him and his friends all dressed as a kpop group",
+                "next to you dressed as ZELDA",
+                "comedy gold.",
+                "why don’t you already have his number?"
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "first of all, that was LINK, ty"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i lost him after ur friend threw up D:",
+                "i had to clean it up!!",
+                "this is ur fault matt"
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "false",
+            "clueGiven": 1,
+            "messages": [
+                "HAHAHA",
+                "it's not a party till someone chucks HAHAH",
+                "actually come to think of it",
+                "i saw somebody get pushed into the pool",
+                "seems like that'd b a good way to lose a shoe lmao"
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "the shoe deffo smells like vodka and not chlorine"
+            ],
+            "clueNeeded": [
+                "NoClue"
+            ],
+            "branch": [
+                13
+            ]
+        },
+        {
+            "node": 13,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "buuut i’ll try and learn more i guess?"
+            ],
+            "branch": [
+                14
+            ]
+        },
+        {
+            "node": 14,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "good luck",
+                "nerd"
+            ],
+            "branch": [
+                15
+            ]
+        }
+    ]
 }
