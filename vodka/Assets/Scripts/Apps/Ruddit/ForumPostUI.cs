@@ -17,14 +17,14 @@ public class ForumPostUI : MonoBehaviour
         PostContent.SetActive(!PostContent.activeSelf);
     }
 
-    public void SetPhotoContent (int photoIndex, PhoneOS os) {
-        if(photoIndex > -1) {
-            Sprite img = os.PhotoAssets[photoIndex];
+    public void SetPhotoContent (ForumPostData post, PhoneOS os) {
+        if(post.Photo > -1) {
+            Sprite img = os.PhotoAssets[post.Photo];
             if(img) {
                 ContentImage.sprite = img;
                 ContentImage.gameObject.SetActive(true);
                 ContentImage.SetNativeSize();
-                ContentImage.rectTransform.sizeDelta *= 0.5f;
+                ContentImage.rectTransform.sizeDelta *= post.ImageHeight;
             }
         }
     }

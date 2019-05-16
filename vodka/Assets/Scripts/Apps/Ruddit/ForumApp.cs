@@ -35,7 +35,7 @@ public class ForumApp : App
                 }
 
                 // load post image
-                postUI.SetPhotoContent(post.Photo, PhoneOS);
+                postUI.SetPhotoContent(post, PhoneOS);
 
                 // let phone OS know when we encounter this post
                 postUI.OpenPostButton.onClick.AddListener(

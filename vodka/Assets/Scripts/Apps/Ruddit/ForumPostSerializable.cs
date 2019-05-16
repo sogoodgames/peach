@@ -11,4 +11,5 @@ public class ForumPostSerializable {
     public bool unlocked; // unlocked from beginning
     public int icon; // icon file
     public int photo; // post image file (optional)
+    public float imageHeight; // image preferred height in-app in pixels
 }

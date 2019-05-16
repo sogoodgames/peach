@@ -39,6 +39,9 @@ public class ForumPostData
     private int m_photo; // post image file (optional)
     public int Photo {get{return m_photo;}}
 
+    private float m_imageHeight; // image preferred height in-app in pixels
+    public float ImageHeight {get{return m_imageHeight;}}
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
@@ -52,6 +55,7 @@ public class ForumPostData
         m_unlocked = post.unlocked;
         m_icon = post.icon;
         m_photo = post.photo;
+        m_imageHeight = post.imageHeight;
     }
 
     // ------------------------------------------------------------------------

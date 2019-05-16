@@ -1974,8 +1974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.609973, y: 98.420044}
-  m_SizeDelta: {x: 190, y: 190}
+  m_AnchoredPosition: {x: 0, y: 98.420044}
+  m_SizeDelta: {x: 160.3, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100676234
 MonoBehaviour:
@@ -3444,12 +3444,15 @@ MonoBehaviour:
   ForumPostTextAssets:
   - {fileID: 4900000, guid: eea0704e44fc3684d903ccb340a05d25, type: 3}
   - {fileID: 4900000, guid: 9f3e0779fabf67e469d0048bd9dbc48a, type: 3}
+  - {fileID: 4900000, guid: 0768656ae7a16f043a4bd4873aba7ee4, type: 3}
+  - {fileID: 4900000, guid: 0a4b782a05b0a504c8e9e541d164a872, type: 3}
   UserIconAssets:
   - {fileID: 21300000, guid: 3776d19bc50ff384999bc104df9376b8, type: 3}
   - {fileID: 21300000, guid: d71ce492947fca545ae8543c6b3caf67, type: 3}
   - {fileID: 21300000, guid: f1c4359ec85e55f469f867ae4fb971a9, type: 3}
   - {fileID: 21300000, guid: 0cc5c9c37ab08af438c3d15f32f5fcc2, type: 3}
   - {fileID: 21300000, guid: 1c61194648926da498b98f0904f60664, type: 3}
+  - {fileID: 21300000, guid: e994e4dd569daed48b360bd5f5a11e53, type: 3}
   PhotoAssets:
   - {fileID: 21300000, guid: c5037630f9c485e408c604e6dfcb0b6f, type: 3}
   - {fileID: 21300000, guid: e166b32984698d548ae4f83b402ae816, type: 3}

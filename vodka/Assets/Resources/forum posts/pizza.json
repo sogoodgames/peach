@@ -7,5 +7,6 @@
     "time" : 2,
     "unlocked" : "true",
     "icon" : 2,
-    "photo" : 2
+    "photo" : 2,
+    "imageHeight" : 0.5
 }
