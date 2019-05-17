@@ -1,4 +1,184 @@
 {
     "friend" : "2",
-    "clueNeeded" : 10
+    "clueNeeded" : 10,
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "hey jin, this is the party host from last night :)"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i think i have… your shoe??",
+                "smells like peach vodka"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "haha hey",
+                "I was wondering what happened to it",
+                "fun beer pong game last night :)",
+                "even though I was carrying hahaha"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "you have a height advantage!",
+                "you can carry me any time :0"
+            ],
+            "clueNeeded": [
+                0, 0
+            ],
+            "branch": [
+                4, 5
+            ]
+        },
+        {
+            "node": 4,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "haha suuuuuure"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "i’m sure i will ;)"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "so what i’m hearing is",
+                "we need a rematch"
+            ],
+            "branch": [
+                7
+            ]
+        },
+        {
+            "node": 7,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "duh!"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "you can’t bail this time :)"
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "omggg that was out of my control"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "not my fault that guy puked XD"
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "if you say so!",
+                "this is coming from the shoe stealer :)",
+                "I’m going to that Black Coffee show this weekend",
+                "maybe you can meet me there and give me my shoe back?"
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "count me in :)"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                13
+            ]
+        },
+        {
+            "node": 13,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "it’s a date :)"
+            ],
+            "branch": [
+                14
+            ]
+        }
+    ]
 }
