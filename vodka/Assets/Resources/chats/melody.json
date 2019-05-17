@@ -1,4 +1,281 @@
 {
     "friend" : "6",
-    "unlocked" : "false"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "heyoo, Courtney gave me ur number"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "howre you holding up from the party?",
+                "anything crazy happen?"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Could be better. Lol. Hungover",
+                "Somebody spilled peach vodka on me last night."
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "oh shit!"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                4
+            ]
+        },
+        {
+            "node": 4,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "so, somebody left their shoe at my place last night",
+                "and IT SMELLS LIKE PEACH VODKA OMG"
+            ],
+            "branch": [
+                5
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "You seem really excited about that. Lol",
+                "I definitely saw it land on some dude."
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "yEAH"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                7
+            ]
+        },
+        {
+            "node": 7,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "do you know him??"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Nope"
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "uhhh do you know who spilled the vodka?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Uhhh, so I don’t remember the party that well.",
+                "Hence the hangover",
+                "Would need a pic or something to jog my memory."
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "here’s a pic I saw on our uni’s forums"
+            ],
+            "clueNeeded": [
+                5
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "is this you dressed as a cow??",
+                "who’s the one in the wonder woman costume?"
+            ],
+            "branch": [
+                13
+            ]
+        },
+        {
+            "node": 13,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Ohhhh yeah. That’s me and this chick Emma.",
+                "Come to think of it, I think Emma did it. She’s the one who bought booze too. Lol"
+            ],
+            "branch": [
+                14
+            ]
+        },
+        {
+            "node": 14,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "can you get me in touch with emma?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                15
+            ]
+        },
+        {
+            "node": 15,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "maybe she knows my shoe boy?"
+            ],
+            "branch": [
+                16
+            ]
+        },
+        {
+            "node": 16,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "I don’t know her personally, I just met her last night.",
+                "I saw some nerdy looking guy hitting on her though. Maybe ask him."
+            ],
+            "branch": [
+                17
+            ]
+        },
+        {
+            "node": 17,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "what did he look like?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                18
+            ]
+        },
+        {
+            "node": 18,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Uhh, he was wearing a purple Mario t-shirt."
+            ],
+            "branch": [
+                19
+            ]
+        },
+        {
+            "node": 19,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "LMAO YOU MEAN WALUIGI"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                21
+            ]
+        },
+        {
+            "node": 21,
+            "player": "true",
+            "clueGiven": 6,
+            "messages": [
+                "ok that’s my friend Kyle! thanks"
+            ],
+            "branch": [
+                22
+            ]
+        },
+        {
+            "node": 22,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "Sure thing. Lol"
+            ],
+            "branch": [
+                23
+            ]
+        }
+    ]
 }

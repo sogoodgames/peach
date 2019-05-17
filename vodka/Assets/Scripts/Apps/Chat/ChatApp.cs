@@ -257,10 +257,6 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     // Methods : Conversation coroutines
     // ------------------------------------------------------------------------
-    // 'visited' is a flag that indicates whether or not we've
-    //  already encountered these messages
-    // if we've encountered them, draw them immediately & don't move convo
-    // otherwise, draw them like natural convo & move convo
     private IEnumerator RunMessage (Message message) {
         if(message == null) {
             Debug.LogError("Message null.");
@@ -285,6 +281,11 @@ public class ChatApp : App
         } else {
             m_drawBubblesCoroutine = RunChatBubbles(message, FriendChatBubblePrefab);
                 yield return StartCoroutine(m_drawBubblesCoroutine);
+        }
+
+        // record any clues found
+        if(message.ClueGiven != ClueID.NoClue) {
+            PhoneOS.FoundClue(message.ClueGiven);
         }
 
         // if we're not waiting on an option selection, draw the next message
