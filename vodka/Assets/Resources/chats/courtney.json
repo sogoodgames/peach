@@ -1,6 +1,6 @@
 {
     "friend" : "0",
-    "unlocked" : "true",
+    "clueNeeded" : 9,
     "messages" : [
         {
             "node": 0,

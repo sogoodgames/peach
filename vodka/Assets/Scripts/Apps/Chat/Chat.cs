@@ -73,11 +73,6 @@ public class Chat {
     // list of messages in a way that makes sense
     public int order = 0;
 
-    // only characters that are available right when the game starts
-    // will have this as 'true' in the json
-    // otherwise, the flag is set by gameplay
-    public bool unlocked;
-
     // only the messages you've visited so far
     public List<Message> visitedMessages;
 
@@ -94,6 +89,10 @@ public class Chat {
     private Friend friend;
     public Friend Friend {get{return friend;}}
 
+    // the clue required to open the chat 
+    private ClueID clueNeeded;
+    public ClueID ClueNeeded {get{return clueNeeded;}}
+
     // all of the messages you trade with them
     private Message[] messages;
     public bool HasMessages {get{return messages != null && messages.Length > 0;}}
@@ -103,7 +102,7 @@ public class Chat {
     // ------------------------------------------------------------------------
     public Chat (ChatSerializable serializedChat) {
         friend = serializedChat.friend;
-        unlocked = serializedChat.unlocked;
+        clueNeeded = serializedChat.clueNeeded;
 
         order = 0;
         lastNode = 0;

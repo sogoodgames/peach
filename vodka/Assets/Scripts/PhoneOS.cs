@@ -33,7 +33,7 @@ public class PhoneOS : MonoBehaviour
             // only add chats that are available
             List<Chat> activeChats = new List<Chat>();
             foreach(Chat c in m_allChats) {
-                if(c.unlocked) {
+                if(ClueRequirementMet(c.ClueNeeded)) {
                     activeChats.Add(c);
                 }
             }
@@ -140,7 +140,7 @@ public class PhoneOS : MonoBehaviour
                     Debug.LogWarning("Chat empty: " + textAsset.name);
                 } else {
                     // if it's unlocked from the start, increase our chat counter
-                    if(chat.unlocked) {
+                    if(chat.ClueNeeded == ClueID.NoClue) {
                         chat.order = m_chatCounter;
                         m_chatCounter++;
                     }

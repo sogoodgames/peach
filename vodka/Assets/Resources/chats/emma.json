@@ -1,4 +1,223 @@
 {
     "friend" : "1",
-    "unlocked" : "false"
+    "clueNeeded" : 7,
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "yoooooo, this is last night’s excellent party host"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i loved your wonder woman costume! :)",
+                "how was the rest of your night?"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "thanks!! i made it myself",
+                "it was lit!"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "i think you may be an important player in this mystery i’m solving"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                4
+            ]
+        },
+        {
+            "node": 4,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "did you spill peach vodka on jin’s shoes lol"
+            ],
+            "branch": [
+                5
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "yeah, sorry about that D:"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "did you happen to get his number or anything?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                7
+            ]
+        },
+        {
+            "node": 7,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "yeah i wish",
+                "that blonde guy dressed as BB tho. omg",
+                "pretty sure his name was taeyong?",
+                "BB is my bias"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "BB is my bias too… :))"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "omg we’re insta friends",
+                "do you have tae’s number? kinda want to see him again"
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "no, but you could see me again if you want :) same bias and all, lol",
+                "no, but i’ll go find it for you!",
+                "yes!! here's his number"
+            ],
+            "clueNeeded": [
+                0, 0, 8
+            ],
+            "branch": [
+                11, 12, 13
+            ]
+        },
+        {
+            "node": 11,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "omg, i’d love that :)",
+                "haha i was kinda hoping you’d find me after the party but",
+                "i didn’t have any way to reach you",
+                "kinda seemed like u were making googly eyes at jin"
+            ],
+            "branch": [
+                14
+            ]
+        },
+        {
+            "node": 14,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "well technically ive been looking for jin’s number so i can give him his shoe back buttt"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                15
+            ]
+        },
+        {
+            "node": 15,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "but hey! can't believe i got yours instead :D"
+            ],
+            "branch": [
+                16
+            ]
+        },
+        {
+            "node": 16,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "omg :)) we should hang soon!! lmk when you're free later??? ;)"
+            ],
+            "branch": [
+                17
+            ]
+        },
+        {
+            "node": 12,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "ok lemme know when you do!!"
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 13,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "OMGGG",
+                "thanks!"
+            ],
+            "branch": [
+                17
+            ]
+        }
+    ]
 }

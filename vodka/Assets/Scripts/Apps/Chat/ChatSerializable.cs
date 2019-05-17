@@ -46,6 +46,6 @@ public class MessageSerializable {
 [Serializable]
 public class ChatSerializable {
     public Friend friend; // the person you're talking to
-    public bool unlocked; // whether or not it's unlocked from the start
+    public ClueID clueNeeded; // the clue needed to unlock the chat
     public MessageSerializable[] messages; // all of the messages
 }
