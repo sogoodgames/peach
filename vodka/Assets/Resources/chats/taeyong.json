@@ -1,4 +1,327 @@
 {
     "friend" : "9",
-    "unlocked" : "false"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "hey tae, micahel gave me ur number"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "so crazy story",
+                "uhhh i think your friend Jin left his shoe at my place?"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "whaduppppp",
+                "yeah somebody spilled vodka on his shoes so he took them off",
+                "that’s hilarious that he left one at the party",
+                "you two looked cute playing bp ;)"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "aSGLKAHSGLS",
+                "haha yeah we did :)"
+            ],
+            "clueNeeded": [
+                0,
+                0
+            ],
+            "branch": [
+                4,
+                5
+            ]
+        },
+        {
+            "node": 4,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "i’m his bff, i can read him ;)"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "haha wow you know what you want!",
+                "i like that ;)"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "right so ANYWAY"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                7
+            ]
+        },
+        {
+            "node": 7,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "can you help me get his shoe back to him?",
+                "like give me his number or something"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "oh i see",
+                "steal his shoe so you can get his number ;)"
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "aaslgkh;asgkl NO he left it at my place!!"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "not my fault"
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "sure ;)",
+                "how about a trade",
+                "that chick that did the booze run"
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "wait.. you mean the cute one??",
+                "whomst?"
+            ],
+            "clueNeeded": [
+                0, 0
+            ],
+            "branch": [
+                13, 13
+            ]
+        },
+        {
+            "node": 13,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "the one dressed as kiki!",
+                "get me her number and i’ll get u Jin’s number ;)"
+            ],
+            "branch": [
+                14
+            ]
+        },
+        {
+            "node": 14,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "oh my godddd"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                15
+            ]
+        },
+        {
+            "node": 15,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "ok fine"
+            ],
+            "branch": [
+                16
+            ]
+        },
+        {
+            "node": 16,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "ill get back to you when i find her.. might take a sec tho, idk her",
+                "ok, i have your kiki girl’s number! her name is Emma btw"
+            ],
+            "clueNeeded": [
+                0, 7
+            ],
+            "branch": [
+                17, 18
+            ]
+        },
+        {
+            "node": 17,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "can't wait ;)"
+            ],
+            "branch": [
+                16
+            ]
+        },
+        {
+            "node": 18,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "WOW you actually did it ",
+                "honestly i'm impressed"
+            ],
+            "branch": [
+                19
+            ]
+        },
+        {
+            "node": 19,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "you didn’t actually expect me to do it???????!?!?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                20
+            ]
+        },
+        {
+            "node": 20,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "ffghdfhgh"
+            ],
+            "branch": [
+                21
+            ]
+        },
+        {
+            "node": 21,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "LOL not really?!?",
+                "but thanks, i guess i owe you ;)"
+            ],
+            "branch": [
+                22
+            ]
+        },
+        {
+            "node": 22,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "ok well youd better use it fast"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                23
+            ]
+        },
+        {
+            "node": 23,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i got it from another potential suitor!"
+            ],
+            "branch": [
+                24
+            ]
+        },
+        {
+            "node": 24,
+            "player": "false",
+            "clueGiven": 10,
+            "messages": [
+                "dang yall are all thirsty lmfao",
+                "here’s Jin’s number",
+                "good luck ;)"
+            ],
+            "branch": [
+                25
+            ]
+        }
+    ]
 }
