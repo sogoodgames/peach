@@ -134,7 +134,7 @@
         {
             "node": 10,
             "player": "false",
-            "clueGiven": "CourtneyPhone",
+            "clueGiven": 9,
             "messages": [
                 "yeah sure!",
                 "good luck with.. whatever you’re doing??"

@@ -1,4 +1,173 @@
 {
     "friend" : "7",
-    "unlocked" : "false"
+    "unlocked" : "true",
+    "messages" : [
+        {
+            "node": 0,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "hey michael! courtney gave me ur number"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                1
+            ]
+        },
+        {
+            "node": 1,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "sorry the party ended badly for you D:",
+                "cool pirate costume!"
+            ],
+            "branch": [
+                2
+            ]
+        },
+        {
+            "node": 2,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "uhhh yeah i went home soaking wet at like 1am, so that’s cool",
+                "yeah, didn’t actually intend to go swimming in it.",
+                "what's up?"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 3,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "uhhh yeah sorry about that, just wanted to make sure ur good? D:",
+                "i saw a photo of you in the pirate costume eating pineapple pizza! was pineapple your choice? no judgement lol"
+            ],
+            "clueNeeded": [
+                0,
+                3
+            ],
+            "branch": [
+                4,
+                5
+            ]
+        },
+        {
+            "node": 4,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "uhhh yeah im fine now",
+                "what did you want again?"
+            ],
+            "branch": [
+                3
+            ]
+        },
+        {
+            "node": 5,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "nope"
+            ],
+            "branch": [
+                6
+            ]
+        },
+        {
+            "node": 6,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "who did?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                7
+            ]
+        },
+        {
+            "node": 7,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "i think it was taeyong’s idea"
+            ],
+            "branch": [
+                8
+            ]
+        },
+        {
+            "node": 8,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "who was that?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                9
+            ]
+        },
+        {
+            "node": 9,
+            "player": "false",
+            "clueGiven": 0,
+            "messages": [
+                "lol, you don’t know everybody who was at your party?",
+                "that was the dude who posted that photo of me on ruddit",
+                "one of the guys dressed as the kpop stars"
+            ],
+            "branch": [
+                10
+            ]
+        },
+        {
+            "node": 10,
+            "player": "true",
+            "clueGiven": 0,
+            "options": [
+                "do you have his contact info?"
+            ],
+            "clueNeeded": [
+                0
+            ],
+            "branch": [
+                11
+            ]
+        },
+        {
+            "node": 11,
+            "player": "true",
+            "clueGiven": 0,
+            "messages": [
+                "i think his friend left his shoe at my place"
+            ],
+            "branch": [
+                12
+            ]
+        },
+        {
+            "node": 12,
+            "player": "false",
+            "clueGiven": 8,
+            "messages": [
+                "uhhhhh sure lol."
+            ],
+            "branch": [
+                13
+            ]
+        }
+    ]
 }

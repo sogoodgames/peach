@@ -10,7 +10,7 @@
                 "yoooo Courtney, this is the host from the party last nite!"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 1
@@ -48,7 +48,7 @@
                 "somebody left their shoe at my place"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 4
@@ -87,8 +87,8 @@
                 "i saw you posted about the poetry night, do you know those ppl? they’re the only group of people i didn't recognize at all"
             ],
             "clueNeeded": [
-                "Pool",
-                "Poetry"
+                1,
+                4
             ],
             "branch": [
                 7, 8
@@ -114,7 +114,7 @@
                 "do you have either of their contact info? maybe one of them lost a shoe, lol"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 10
@@ -154,7 +154,7 @@
                 "could you give me her number?"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 12

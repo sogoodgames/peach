@@ -10,7 +10,7 @@
                 "hey dude! gj at beer pong last night lol"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 1
@@ -49,7 +49,7 @@
                 "LOL"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 4
@@ -75,8 +75,8 @@
                 "no idea what you’re talking about :)"
             ],
             "clueNeeded": [
-                "NoClue",
-                "NoClue"
+                0,
+                0
             ],
             "branch": [
                 6, 7
@@ -127,7 +127,7 @@
                 "first of all, that was LINK, ty"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 10
@@ -169,7 +169,7 @@
                 "the shoe deffo smells like vodka and not chlorine"
             ],
             "clueNeeded": [
-                "NoClue"
+                0
             ],
             "branch": [
                 13

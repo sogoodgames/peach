@@ -5,12 +5,12 @@
     {
       "node": 0,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "options": [
         "hey kyle! how are you holding up from last night?"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         1
@@ -19,12 +19,12 @@
     {
       "node": 1,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "ur car dealership… plastic air guy… costume thing… was p good LOL"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         2
@@ -33,13 +33,13 @@
     {
       "node": 2,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "Haha thanks",
         "I’m good, wbu?"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         3
@@ -48,14 +48,14 @@
     {
       "node": 3,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "options": [
         "still recovering from my defeat at the hands of a KIRBY MAIN",
         "still laughing that yall came to a party and only played smash bros all night??"
       ],
       "clueNeeded": [
-        "NoClue",
-        "NoClue"
+        0,
+        0
       ],
       "branch": [
         4,
@@ -65,12 +65,12 @@
     {
       "node": 4,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "So you admit defeat!"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         6
@@ -79,12 +79,12 @@
     {
       "node": 5,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "I mean, I talked to other people too! Can’t say the same for the other guys."
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         6
@@ -93,13 +93,13 @@
     {
       "node": 6,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "options": [
         "i’m trying to find this dude who left his shoe at my place, know anything?",
         "ok so sOMEBODY told me u hit on that girl who spilled the peach vodka!! fess up, do you know her?"
       ],
       "clueNeeded": [
-        "NoClue",
+        0,
         6
       ],
       "branch": [
@@ -110,12 +110,12 @@
     {
       "node": 7,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "Uhhh not really lol? GLHF"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         6
@@ -124,12 +124,12 @@
     {
       "node": 8,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "Yeah I talked to her, why?"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         9
@@ -138,12 +138,12 @@
     {
       "node": 9,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "options": [
         "did you get her number LOL"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         10
@@ -152,14 +152,14 @@
     {
       "node": 10,
       "player": "false",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "Yeah",
         "kek",
         "Why, does she know something about your shoe boy?"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         11
@@ -168,12 +168,12 @@
     {
       "node": 11,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "options": [
         "first of all"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         12
@@ -182,7 +182,7 @@
     {
       "node": 12,
       "player": "true",
-      "clueGiven": "NoClue",
+      "clueGiven": 0,
       "messages": [
         "KYLE",
         "you DOG",
@@ -192,7 +192,7 @@
         "give me her number pls? :3"
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         13
@@ -206,7 +206,7 @@
         "Ok fine, here you go."
       ],
       "clueNeeded": [
-        "NoClue"
+        0
       ],
       "branch": [
         14
