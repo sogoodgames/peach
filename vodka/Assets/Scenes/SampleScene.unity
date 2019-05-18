@@ -2480,7 +2480,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 569161226}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -3442,10 +3442,15 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 163ee71efadbd8845bedde93d0429a39, type: 3}
   - {fileID: 4900000, guid: b88dcd0e9bdbe754391ec338b4bb2b7a, type: 3}
   ForumPostTextAssets:
-  - {fileID: 4900000, guid: eea0704e44fc3684d903ccb340a05d25, type: 3}
+  - {fileID: 4900000, guid: f7c6014e8a4d0894dbed7a06fbbeb3c4, type: 3}
   - {fileID: 4900000, guid: 9f3e0779fabf67e469d0048bd9dbc48a, type: 3}
   - {fileID: 4900000, guid: 0768656ae7a16f043a4bd4873aba7ee4, type: 3}
   - {fileID: 4900000, guid: 0a4b782a05b0a504c8e9e541d164a872, type: 3}
+  - {fileID: 4900000, guid: cfc9ca7046b35944da7cbbab366e86a3, type: 3}
+  - {fileID: 4900000, guid: 14934dc2d51501c419d2b723d4386625, type: 3}
+  - {fileID: 4900000, guid: eea0704e44fc3684d903ccb340a05d25, type: 3}
+  - {fileID: 4900000, guid: a25c041dc5562954a84f7382d55f2a8d, type: 3}
+  - {fileID: 4900000, guid: 015ed551cc7d75c438671386a0b40ecc, type: 3}
   UserIconAssets:
   - {fileID: 21300000, guid: 3776d19bc50ff384999bc104df9376b8, type: 3}
   - {fileID: 21300000, guid: d71ce492947fca545ae8543c6b3caf67, type: 3}
@@ -3453,11 +3458,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cc5c9c37ab08af438c3d15f32f5fcc2, type: 3}
   - {fileID: 21300000, guid: 1c61194648926da498b98f0904f60664, type: 3}
   - {fileID: 21300000, guid: e994e4dd569daed48b360bd5f5a11e53, type: 3}
+  - {fileID: 21300000, guid: 077b5259edb269345aefcc659f5bd489, type: 3}
+  - {fileID: 21300000, guid: 2edf400e5a059f64796a730a5c417943, type: 3}
+  - {fileID: 21300000, guid: ac38b5f9a14e0154c95f7c13bbbf993f, type: 3}
+  - {fileID: 21300000, guid: 4bba63758f76d4c40a2fb53d21f796c0, type: 3}
   PhotoAssets:
   - {fileID: 21300000, guid: c5037630f9c485e408c604e6dfcb0b6f, type: 3}
   - {fileID: 21300000, guid: e166b32984698d548ae4f83b402ae816, type: 3}
   - {fileID: 21300000, guid: 7c92070c6a6095d4196fb1f966160c7b, type: 3}
   - {fileID: 21300000, guid: c4e630e90e498fb42b666ebcd73f8e3f, type: 3}
+  - {fileID: 21300000, guid: 6eeca7214294dc04c83554bae61fb03d, type: 3}
+  - {fileID: 21300000, guid: 133c70a4da548c244821a1660dc11821, type: 3}
+  - {fileID: 21300000, guid: 427ec03f5ee20e74a84a0b3cfdd4be99, type: 3}
 --- !u!224 &7470853907998688416
 RectTransform:
   m_ObjectHideFlags: 0

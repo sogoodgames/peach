@@ -10,6 +10,8 @@ public class ForumPostUI : MonoBehaviour
     public Text UsernameText;
     public Text MetaInfoText;
     public Text BodyText;
+    public Image BackgroundImg1;
+    public Image BackgroundImg2;
 
     public GameObject PostContent;
 
