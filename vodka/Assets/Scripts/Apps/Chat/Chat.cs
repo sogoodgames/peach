@@ -38,6 +38,14 @@ public class Message {
     private int[] branch;
     public int[] Branch {get{return branch;}}
 
+    // the index in the resources of the attached image
+    private int image;
+    public int Image {get{return image;}}
+
+    // the height delta of the attached image
+    private float imageHeight;
+    public float ImageHeight {get{return imageHeight;}}
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
@@ -49,6 +57,8 @@ public class Message {
         options = serializedMessage.options;
         clueNeeded = serializedMessage.clueNeeded;
         branch = serializedMessage.branch;
+        image = serializedMessage.image;
+        imageHeight = serializedMessage.imageHeight;
 
         OptionSelection = -1;
     }

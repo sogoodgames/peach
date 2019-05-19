@@ -136,18 +136,18 @@ public class ChatApp : App
             if(message.Player) {
                 if(message.HasOptions()) {
                     if(message.MadeSelection()) {
-                        DrawChatBubble(message.Messages[0], PlayerChatBubblePrefab);
+                        DrawChatBubble(message, 0, PlayerChatBubblePrefab);
                     } else {
                         DrawChatOptions(message);
                     }
                 } else {
-                    foreach(string text in message.Messages) {
-                        DrawChatBubble(text, PlayerChatBubblePrefab);
+                    for (int i = 0; i < message.Messages.Length; i++) {
+                        DrawChatBubble(message, i, PlayerChatBubblePrefab);
                     }
                 }
             } else {
-                foreach(string text in message.Messages) {
-                    DrawChatBubble(text, FriendChatBubblePrefab);
+                for (int i = 0; i < message.Messages.Length; i++) {
+                    DrawChatBubble(message, i, FriendChatBubblePrefab);
                 }
             }
         }
@@ -194,19 +194,24 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     // Methods : Drawing UI
     // ------------------------------------------------------------------------
-    private void DrawChatBubble (string text, GameObject prefab) {
+    private void DrawChatBubble (Message message, int messageIndex, GameObject prefab) {
         // create bubble object
         GameObject bubble = Instantiate(
             prefab,
             ChatBubblesParent
         ) as GameObject;
 
-        // fill text with message text
-        Text textObj = bubble.GetComponentInChildren<Text>();
-        if(textObj) {
-            textObj.text = text;
-        } else {
-            Debug.LogError("No Text component found on chat bubble prefab: " + prefab);
+        // find ChatBubbleUI
+        ChatBubbleUI chatBubbleUi = bubble.GetComponent<ChatBubbleUI>();
+        if(!chatBubbleUi) {
+            return;
+        }
+
+        // fill text and image
+        chatBubbleUi.Text.text = message.Messages[messageIndex];
+
+        if(messageIndex == 0) {
+            chatBubbleUi.SetImageContent(message, PhoneOS);
         }
     }
 
@@ -310,7 +315,7 @@ public class ChatApp : App
             yield return new WaitForSeconds(t);
             //Debug.Log("drawing line: " + i);
 
-            DrawChatBubble(message.Messages[i], prefab);
+            DrawChatBubble(message, i, prefab);
 
             m_needsScroll = true;
         }

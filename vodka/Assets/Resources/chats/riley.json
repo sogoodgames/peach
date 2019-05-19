@@ -115,7 +115,9 @@
             ],
             "branch": [
                 11
-            ]
+            ],
+            "image" : 3,
+            "imageHeight" : 0.5
         },
         {
             "node": 11,
