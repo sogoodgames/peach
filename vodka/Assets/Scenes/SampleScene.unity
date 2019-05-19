@@ -2291,10 +2291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
-  NotificationManager: {fileID: 2127045480}
-  RudditSprite: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
-  MessagesSprite: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
-  NotesSprite: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
 --- !u!1 &1211628583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,7 +3670,11 @@ MonoBehaviour:
   NotificationUI: {fileID: 906082355}
   Icon: {fileID: 905839913}
   Text: {fileID: 1487649187}
+  RudditSprite: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
+  MessagesSprite: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
+  NotesSprite: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
   LingerSeconds: 5
+  NewContactNotifText: 'New contact: '
 --- !u!114 &7470853908441363793
 MonoBehaviour:
   m_ObjectHideFlags: 0

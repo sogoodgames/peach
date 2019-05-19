@@ -144,7 +144,7 @@ public class PhoneOS : MonoBehaviour
 
     // ------------------------------------------------------------------------
     public void FoundClue (ClueID id) {
-        NotesApp.FoundClue(id); // really should send an event but meh
+        NotificationManager.FoundClueNotif(id); // really should send an event but meh
         m_clueLockStates[id] = true;
     }
 
