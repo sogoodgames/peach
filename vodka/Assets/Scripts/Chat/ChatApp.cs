@@ -125,6 +125,9 @@ public class ChatApp : App
 
         Debug.Log("opening chat: " + c.Friend + "; active node: " + c.lastNode);
 
+        // set name
+        FriendTitleText.text = c.Friend.ToString();
+
         // draw chat bubbles for all of the messages we've read so far
         FillChatWithVisitedMessages();
 
