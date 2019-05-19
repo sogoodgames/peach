@@ -138,7 +138,17 @@ public class Chat {
     }
 
     // ------------------------------------------------------------------------
-    public void VisitMessage (Message m) {
+    public void VisitMessage (Message m, bool force) {
+        // if we're looping back to a multiple-answer question,
+        // don't add it again
+        if(!force && visitedMessages.Contains(m) && m.Options.Length > 1) {
+            return;
+        }
+
+        if(visitedMessages[visitedMessages.Count - 1].Node == m.Node) {
+            return;
+        }
+
         visitedMessages.Add(m);
         lastVisitedMessage = visitedMessages.Count - 1;
     }

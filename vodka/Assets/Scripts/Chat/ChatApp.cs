@@ -265,7 +265,7 @@ public class ChatApp : App
             if(PhoneOS.ClueRequirementMet(message.ClueNeeded[i])) {
                 // set button text & hook up option function
                 messageButton.Text.text = message.Options[i];
-                SetButtonListener(messageButton.Button, i);
+                SetButtonListener(messageButton.Button, message, i);
                 //Debug.Log("created option [" + message.options[i] + "] with index " + i + " for message " + message.node);
             } else {
                 // mark it as unavilable
@@ -283,8 +283,8 @@ public class ChatApp : App
             yield break;
         }
 
-        // record that we visited this message
-        m_activeChat.VisitMessage(message);
+        // record that we visited this message (don't force)
+        m_activeChat.VisitMessage(message, false);
 
         // draw either player or friend messages
         if(message.Player) {
@@ -336,15 +336,14 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     // Methods : Buttons
     // ------------------------------------------------------------------------
-    private void SetButtonListener(Button b, int i) {
+    private void SetButtonListener(Button b, Message m, int i) {
         b.onClick.AddListener(
-            delegate {SelectOption(i);}
+            delegate {SelectOption(m, i);}
         );
     }
 
     // ------------------------------------------------------------------------
-    private void SelectOption (int option) {
-        Message message = m_activeChat.GetLastVisitedMessage();
+    private void SelectOption (Message message, int option) {
         if(message == null) {
             Debug.LogError("Message null.");
             return;
@@ -365,6 +364,9 @@ public class ChatApp : App
         foreach(Transform child in ChatOptionsParent.transform) {
             Destroy(child.gameObject);
         }
+
+        // force record that we visited this message
+        m_activeChat.VisitMessage(message, true);
 
         // draw next chat
         MoveConversation();
