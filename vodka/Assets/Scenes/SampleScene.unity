@@ -2771,6 +2771,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
   Icon: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
+  NotesParent: {fileID: 1920286767}
+  NotePrefab: {fileID: 6879748729205006902, guid: 73c6ec9a89b42e148a09cbf936b1f5e9,
+    type: 3}
 --- !u!1 &1178127564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4258,7 @@ MonoBehaviour:
   Icon: {fileID: 905839913}
   Text: {fileID: 1487649187}
   Button: {fileID: 906082357}
+  NotesApp: {fileID: 1140524368}
   ChatApp: {fileID: 1121651228}
   NoteApp: {fileID: 1140524368}
   ForumApp: {fileID: 107778677}
