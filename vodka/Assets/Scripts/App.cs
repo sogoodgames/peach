@@ -3,6 +3,7 @@
 public abstract class App : MonoBehaviour
 {
     public PhoneOS PhoneOS;
+    public Sprite Icon;
 
     public bool IsOpen {
         get {return gameObject.activeInHierarchy;}

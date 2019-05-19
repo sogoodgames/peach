@@ -737,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
+  Icon: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
   ForumPostParent: {fileID: 1802540390}
   ForumPostPrefab: {fileID: 7251587346829470753, guid: d96fa02a29277da4c93da4a83d2a95a2,
     type: 3}
@@ -1898,6 +1899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906082356}
+  - component: {fileID: 906082357}
   m_Layer: 0
   m_Name: Notification
   m_TagString: Untagged
@@ -1922,6 +1924,48 @@ Transform:
   m_Father: {fileID: 2127045478}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906082357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906082355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1806039441}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &994371110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
+  Icon: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
   ChatSelectionScreen: {fileID: 172776188}
   ChatScreen: {fileID: 557253474}
   ChatButtonsParent: {fileID: 7470853908441363795}
@@ -2291,6 +2336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
+  Icon: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
 --- !u!1 &1211628583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +2992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
+  Icon: {fileID: 21300000, guid: 0e8ca839e49570f4ca2bd52841d8dd5e, type: 3}
 --- !u!1 &1708944825
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,9 +3717,10 @@ MonoBehaviour:
   NotificationUI: {fileID: 906082355}
   Icon: {fileID: 905839913}
   Text: {fileID: 1487649187}
-  RudditSprite: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
-  MessagesSprite: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
-  NotesSprite: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
+  Button: {fileID: 906082357}
+  ChatApp: {fileID: 1121651228}
+  NoteApp: {fileID: 1140524368}
+  ForumApp: {fileID: 107778677}
   LingerSeconds: 5
   NewContactNotifText: 'New contact: '
 --- !u!114 &7470853908441363793

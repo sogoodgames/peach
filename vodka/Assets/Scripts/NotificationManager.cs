@@ -8,11 +8,12 @@ public class NotificationManager : MonoBehaviour
     public GameObject NotificationUI;
     public Image Icon;
     public Text Text;
+    public Button Button;
 
-    // images
-    public Sprite RudditSprite;
-    public Sprite MessagesSprite;
-    public Sprite NotesSprite;
+    // game references
+    public ChatApp ChatApp;
+    public NotesApp NoteApp;
+    public ForumApp ForumApp;
 
     // tuning
     public float LingerSeconds = 2.0f;
@@ -39,8 +40,7 @@ public class NotificationManager : MonoBehaviour
         if(linger && timeLeft >= 0) {
             timeLeft -= Time.deltaTime;
         } else {
-            NotificationUI.SetActive(false);
-            linger = false;
+            Close();
         }
     }
 
@@ -48,14 +48,22 @@ public class NotificationManager : MonoBehaviour
         if(!clueNotes.ContainsKey(id)) {
             return;
         }
-        Icon.sprite = NotesSprite;
+        Icon.sprite = NoteApp.Icon;
         Text.text = clueNotes[id];
+
+        Button.onClick.RemoveAllListeners();
+        Button.onClick.AddListener(NoteApp.Open);
+
         Open();
     }
 
     public void NewContactNotif (string friendName) {
-        Icon.sprite = MessagesSprite;
+        Icon.sprite = ChatApp.Icon;
         Text.text = NewContactNotifText + friendName;
+
+        Button.onClick.RemoveAllListeners();
+        Button.onClick.AddListener(ChatApp.Open);
+
         Open();
     }
 
@@ -63,5 +71,11 @@ public class NotificationManager : MonoBehaviour
         timeLeft = LingerSeconds;
         linger = true;
         NotificationUI.SetActive(true);
+    }
+
+    private void Close () {
+        linger = false;
+        NotificationUI.SetActive(false);
+        Button.onClick.RemoveAllListeners();
     }
 }
