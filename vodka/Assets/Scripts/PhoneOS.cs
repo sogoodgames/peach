@@ -91,6 +91,21 @@ public class PhoneOS : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    // Private Variables
+    // ------------------------------------------------------------------------
+    // clues really should have been a class
+    // with corresponding json
+    // but it's too late
+    private Dictionary<ClueID, string> PhoneNumberClueNames = new Dictionary<ClueID, string>() {
+        {ClueID.EmmaPhone, "Emma"},
+        {ClueID.TaeyongPhone, "Taeyong"},
+        {ClueID.CourtneyPhone, "Courtney"},
+        {ClueID.JinPhone, "Jin"},
+        {ClueID.MichaelPhone, "Michael"},
+        {ClueID.MelodyPhone, "Melody"},
+    };
+
+    // ------------------------------------------------------------------------
     // Methods: Monobehaviour
     // ------------------------------------------------------------------------
     void Awake () {
@@ -144,7 +159,13 @@ public class PhoneOS : MonoBehaviour
 
     // ------------------------------------------------------------------------
     public void FoundClue (ClueID id) {
-        NotificationManager.FoundClueNotif(id); // really should send an event but meh
+        // if this is a phone number, send a new contact notif
+        // otherwise, send generic clue notif
+        if(PhoneNumberClueNames.ContainsKey(id)) {
+            NotificationManager.NewContactNotif(PhoneNumberClueNames[id]);
+        } else {
+            NotificationManager.FoundClueNotif(id); // really should send an event but meh
+        }
         m_clueLockStates[id] = true;
     }
 

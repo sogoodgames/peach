@@ -56,6 +56,7 @@ public class NotificationManager : MonoBehaviour
     public void NewContactNotif (string friendName) {
         Icon.sprite = MessagesSprite;
         Text.text = NewContactNotifText + friendName;
+        Open();
     }
 
     private void Open () {
