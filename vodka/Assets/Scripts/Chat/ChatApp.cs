@@ -123,7 +123,7 @@ public class ChatApp : App
         CloseChatSelection();
         m_activeChat = c;
 
-        Debug.Log("opening chat: " + c.Friend + "; active node: " + c.lastNode);
+        Debug.Log("opening chat: " + c.Friend + "; last visited message: " + c.LastVisitedMessage);
 
         // set name
         FriendTitleText.text = c.Friend.ToString();
@@ -142,7 +142,7 @@ public class ChatApp : App
     // but avoiding the coroutines is a lot more convienent 
     // for just wanting to draw all of the read messages with no delay
     private void FillChatWithVisitedMessages () { 
-        foreach(Message message in m_activeChat.visitedMessages) {
+        foreach(Message message in m_activeChat.VisitedMessages) {
             if(message.Player) {
                 if(message.HasOptions()) {
                     if(message.MadeSelection()) {
@@ -175,25 +175,26 @@ public class ChatApp : App
             return;
         }
 
-        Message lastMessage = m_activeChat.GetMessage(m_activeChat.lastNode);
+        Message lastMessage = m_activeChat.GetLastVisitedMessage();
+        int nextNode = -1;
 
-        // increment lastNode
+        // find next message in convo
         if(lastMessage.HasOptions()) {
             if(lastMessage.MadeSelection()) {
                 // if we made a selection, move to the next message
-                m_activeChat.lastNode = lastMessage.Branch[lastMessage.OptionSelection];
+                nextNode = lastMessage.Branch[lastMessage.OptionSelection];
             } else {
                 // if we have an unchosen option, don't do anything
                 return;
             }
         } else {
-            m_activeChat.lastNode = lastMessage.Branch[0];
+            nextNode = lastMessage.Branch[0];
         }
 
         // draw the next message
-        Message nextMessage = m_activeChat.GetMessage(m_activeChat.lastNode);
+        Message nextMessage = m_activeChat.GetMessage(nextNode);
         if(nextMessage == null){
-            Debug.Log("Reached end of convo at node " + m_activeChat.lastNode);
+            Debug.Log("Reached end of convo at last visited message " + m_activeChat.LastVisitedMessage);
             m_activeChat.finished = true;
             return;
         }
@@ -282,11 +283,8 @@ public class ChatApp : App
             yield break;
         }
 
-        // record that we drew this message
-        if(!m_activeChat.visitedMessages.Contains(message)) {
-            m_activeChat.visitedMessages.Add(message);
-            //Debug.Log("added message: " + message.Node);
-        }
+        // record that we visited this message
+        m_activeChat.VisitMessage(message);
 
         // draw either player or friend messages
         if(message.Player) {
@@ -346,7 +344,7 @@ public class ChatApp : App
 
     // ------------------------------------------------------------------------
     private void SelectOption (int option) {
-        Message message = m_activeChat.GetMessage(m_activeChat.lastNode);
+        Message message = m_activeChat.GetLastVisitedMessage();
         if(message == null) {
             Debug.LogError("Message null.");
             return;

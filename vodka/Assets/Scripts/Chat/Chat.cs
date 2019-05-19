@@ -83,12 +83,6 @@ public class Chat {
     // list of messages in a way that makes sense
     public int order = 0;
 
-    // only the messages you've visited so far
-    public List<Message> visitedMessages;
-
-    // the index (in 'messages') of the last node read
-    public int lastNode = 0;
-
     // whether or not the convo is finished
     public bool finished;
 
@@ -111,6 +105,14 @@ public class Chat {
     private Message[] messages;
     public bool HasMessages {get{return messages != null && messages.Length > 0;}}
 
+    // only the messages you've visited so far
+    private List<Message> visitedMessages;
+    public List<Message> VisitedMessages {get{return visitedMessages;}}
+
+    // the index (in 'visitedMessages') of the last node read
+    private int lastVisitedMessage = 0;
+    public int LastVisitedMessage {get{return lastVisitedMessage;}}
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
@@ -120,7 +122,7 @@ public class Chat {
         icon = serializedChat.icon;
 
         order = 0;
-        lastNode = 0;
+        lastVisitedMessage = 0;
 
         if(serializedChat.messages == null) {
             return;
@@ -136,6 +138,12 @@ public class Chat {
     }
 
     // ------------------------------------------------------------------------
+    public void VisitMessage (Message m) {
+        visitedMessages.Add(m);
+        lastVisitedMessage = visitedMessages.Count - 1;
+    }
+
+    // ------------------------------------------------------------------------
     public Message GetMessage(int n) {
         foreach(Message m in messages) {
             if(m.Node == n) {
@@ -143,5 +151,10 @@ public class Chat {
             }
         }
         return null;
+    }
+
+    // ------------------------------------------------------------------------
+    public Message GetLastVisitedMessage () {
+        return visitedMessages[lastVisitedMessage];
     }
 }
