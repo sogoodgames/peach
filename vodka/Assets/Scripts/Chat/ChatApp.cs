@@ -123,7 +123,7 @@ public class ChatApp : App
         CloseChatSelection();
         m_activeChat = c;
 
-        Debug.Log("opening chat: " + c.Friend + "; last visited message: " + c.LastVisitedMessage);
+        Debug.Log("opening chat: " + c.Friend + "; last visited message: " + m_activeChat.GetLastVisitedMessage().Node);
 
         // set name
         FriendTitleText.text = c.Friend.ToString();
@@ -194,7 +194,7 @@ public class ChatApp : App
         // draw the next message
         Message nextMessage = m_activeChat.GetMessage(nextNode);
         if(nextMessage == null){
-            Debug.Log("Reached end of convo at last visited message " + m_activeChat.LastVisitedMessage);
+            Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
             m_activeChat.finished = true;
             return;
         }
