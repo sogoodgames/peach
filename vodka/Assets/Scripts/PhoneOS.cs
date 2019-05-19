@@ -160,6 +160,11 @@ public class PhoneOS : MonoBehaviour
 
     // ------------------------------------------------------------------------
     public void FoundClue (ClueID id) {
+        // don't do anything if we already knew
+        if(m_clueLockStates[id] == true) {
+            return;
+        }
+
         // if this is a phone number, send a new contact notif
         // otherwise, send generic clue notif
         if(PhoneNumberClueNames.ContainsKey(id)) {
