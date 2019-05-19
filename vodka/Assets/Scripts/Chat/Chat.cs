@@ -99,6 +99,10 @@ public class Chat {
     private Friend friend;
     public Friend Friend {get{return friend;}}
 
+    // their icon
+    private int icon;
+    public int Icon {get{return icon;}}
+
     // the clue required to open the chat 
     private ClueID clueNeeded;
     public ClueID ClueNeeded {get{return clueNeeded;}}
@@ -113,6 +117,7 @@ public class Chat {
     public Chat (ChatSerializable serializedChat) {
         friend = serializedChat.friend;
         clueNeeded = serializedChat.clueNeeded;
+        icon = serializedChat.icon;
 
         order = 0;
         lastNode = 0;

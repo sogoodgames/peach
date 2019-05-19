@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ChatBubbleUI : MonoBehaviour {
     public Text Text;
+    public Image Icon;
     public Image ContentImage;
 
     public void SetImageContent(Message message, PhoneOS os) {

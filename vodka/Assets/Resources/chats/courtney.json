@@ -1,6 +1,7 @@
 {
     "friend" : "0",
     "clueNeeded" : 9,
+    "icon" : 7,
     "messages" : [
         {
             "node": 0,

@@ -96,7 +96,7 @@ public class ChatApp : App
                 chatButton.NameText.text = chat.Friend.ToString();
 
                 // set profile pic
-                // ??
+                chatButton.ProfilePic.sprite = PhoneOS.UserIconAssets[chat.Icon];
 
                 // show unread notif (if unfinished)
                 if(chat.finished) {
@@ -217,8 +217,9 @@ public class ChatApp : App
             return;
         }
 
-        // fill text and image
+        // fill text, icon, and image
         chatBubbleUi.Text.text = message.Messages[messageIndex];
+        chatBubbleUi.Icon.sprite = PhoneOS.UserIconAssets[m_activeChat.Icon];
 
         if(messageIndex == 0) {
             chatBubbleUi.SetImageContent(message, PhoneOS);

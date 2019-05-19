@@ -19,6 +19,7 @@ public class MessageSerializable {
 [Serializable]
 public class ChatSerializable {
     public Friend friend; // the person you're talking to
+    public int icon; // icon file
     public ClueID clueNeeded; // the clue needed to unlock the chat
     public MessageSerializable[] messages; // all of the messages
 }
