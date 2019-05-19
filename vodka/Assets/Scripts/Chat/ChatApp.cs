@@ -98,6 +98,13 @@ public class ChatApp : App
                 // set profile pic
                 // ??
 
+                // show unread notif (if unfinished)
+                if(chat.finished) {
+                    chatButton.UnreadNotif.SetActive(false);
+                } else {
+                    chatButton.UnreadNotif.SetActive(true);
+                }
+
                 // bind button to open this chat
                 chatButton.OpenButton.onClick.AddListener(
                     delegate {OpenChat(chat);}
