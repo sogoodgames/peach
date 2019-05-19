@@ -3,11 +3,43 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 
+public enum Friend {
+    Courtney = 0,
+    Emma = 1,
+    Jin = 2,
+    Kyle = 3,
+    Lucien = 4,
+    Matt = 5,
+    Melody = 6,
+    Michael = 7,
+    Riley = 8,
+    Taeyong = 9
+}
+
+public enum ClueID {
+    NoClue = 0,
+    Pool = 1, // note 2
+    Band = 2, // note 3
+    Pizza = 3, // note 4
+    Poetry = 4, // note 5
+    Cow = 5, // note 6
+    Flirt = 6, // note 7
+    EmmaPhone = 7, // note 8
+    TaeyongPhone = 8, // note 9
+    CourtneyPhone = 9,
+    JinPhone = 10,
+    MichaelPhone = 11,
+    MelodyPhone = 12,
+    Shoe = 13 // note 1
+}
+
 public class PhoneOS : MonoBehaviour
 {
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    public NotificationManager NotificationManager;
+    public NotesApp NotesApp;
     public List<App> Apps;
     public App HomeApp;
     public List<TextAsset> ChatTextAssets;
@@ -112,6 +144,7 @@ public class PhoneOS : MonoBehaviour
 
     // ------------------------------------------------------------------------
     public void FoundClue (ClueID id) {
+        NotesApp.FoundClue(id); // really should send an event but meh
         m_clueLockStates[id] = true;
     }
 
