@@ -23,6 +23,7 @@ public class ChatApp : App
     public GameObject FriendChatBubblePrefab;
     public GameObject MessageOptionPrefab;
     public ScrollRect ChatBubblesScrollRect;
+    public ChatAttachment ChatAttachment;
 
     // internal
     private Chat m_activeChat;
@@ -64,6 +65,7 @@ public class ChatApp : App
         base.Close();
         CloseChatSelection();
         CloseChat();
+        ChatAttachment.Close();
     }
 
     // ------------------------------------------------------------------------
@@ -225,9 +227,17 @@ public class ChatApp : App
             chatBubbleUi.Icon.sprite = PhoneOS.UserIconAssets[m_activeChat.Icon];
         }
 
-        if(messageIndex == 0) {
-            chatBubbleUi.SetImageContent(message, PhoneOS);
+        if(messageIndex == message.Messages.Length - 1 && message.Image >= 0) {
+            chatBubbleUi.Text.text = message.Messages[messageIndex] + " [click to open attachment]";
+            chatBubbleUi.Button.onClick.AddListener(
+                delegate {OpenAttachment(message);}
+            );
+            chatBubbleUi.Button.interactable = true;
         }
+    }
+
+    public void OpenAttachment (Message message) {
+        ChatAttachment.Open(PhoneOS.PhotoAssets[message.Image]);
     }
 
     // ------------------------------------------------------------------------
