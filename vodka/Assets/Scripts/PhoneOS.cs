@@ -109,6 +109,8 @@ public class PhoneOS : MonoBehaviour
     // Methods: Monobehaviour
     // ------------------------------------------------------------------------
     void Awake () {
+        Screen.SetResolution(480, 848, false);
+
         m_clueLockStates = new Dictionary<ClueID, bool> {
             {ClueID.NoClue, true},
             {ClueID.Pool, false},
