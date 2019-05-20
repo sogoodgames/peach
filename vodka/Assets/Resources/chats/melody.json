@@ -154,7 +154,9 @@
             ],
             "branch": [
                 12
-            ]
+            ],
+            "image" : 1,
+            "imageHeight" : 2.5
         },
         {
             "node": 12,

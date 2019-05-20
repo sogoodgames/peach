@@ -331,7 +331,8 @@ public class ChatApp : App
         // iterate over all of the messages in this node
         for (int i = 0; i < message.Messages.Length; i++) {
             float t = 2;
-            if(message.Player || (message.Node == 0 && i == 0)) {
+            if((message.Node == 0 && i == 0) ||
+                (message.Player && i == 0)) {
                 t = 0;
             }
             yield return new WaitForSeconds(t);
