@@ -23,7 +23,7 @@ public class NotesApp : App
 
     public override void Open() {
         base.Open();
-        PopulateNotes();
+        PopulateNotes(); 
     }
 
     public override void Close() { 
