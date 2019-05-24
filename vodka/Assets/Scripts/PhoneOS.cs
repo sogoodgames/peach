@@ -126,7 +126,8 @@ public class PhoneOS : MonoBehaviour
             {ClueID.JinPhone, false},
             {ClueID.MichaelPhone, false},
             {ClueID.MelodyPhone, false},
-            {ClueID.Shoe, false}
+            {ClueID.Shoe, false},
+            {ClueID.TalkedToRiley, false}
         };
 
         LoadChats();
