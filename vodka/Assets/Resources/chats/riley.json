@@ -329,17 +329,11 @@
         {
             "node": 27,
             "player": "false",
-            "clueGiven": 0,
+            "clueGiven": 14,
             "messages": [
                 "uhhhh try talking to some of the people who were at the party i guess?",
                 "maybeee",
-                "try ur friend Kyle, he knows all the nerds who were holed up playing smash",
-                "and Lucien, the guy playing keyboard for the band, ill give u his number",
-                "Oh and maybe Matt??",
-                "he was one of the guys playing beer pong",
-                "there were also some graphic design majors outside, idk them tho",
-                "and i have no idea who the ppl hanging out by the pool were",
-                "but start with those guys!"
+                "try ur friend Kyle, he knows all the nerds who were holed up playing smash"
             ],
             "branch": [
                 28
@@ -347,6 +341,32 @@
         },
         {
             "node": 28,
+            "player": "false",
+            "clueGiven": 16,
+            "messages": [
+                "and Lucien, the guy playing keyboard for the band, ill give u his number"
+            ],
+            "branch": [
+                29
+            ]
+        },
+        {
+            "node": 29,
+            "player": "false",
+            "clueGiven": 15,
+            "messages": [
+                "Oh and maybe Matt??",
+                "he was one of the guys playing beer pong",
+                "there were also some graphic design majors outside, idk them tho",
+                "and i have no idea who the ppl hanging out by the pool were",
+                "but start with those guys!"
+            ],
+            "branch": [
+                30
+            ]
+        },
+        {
+            "node": 30,
             "player": "true",
             "clueGiven": 0,
             "options": [
@@ -356,22 +376,22 @@
                 0
             ],
             "branch": [
-                29
+                31
             ]
         },
         {
-            "node": 29,
+            "node": 31,
             "player": "true",
             "clueGiven": 0,
             "messages": [
                 "you’re thorough!"
             ],
             "branch": [
-                30
+                32
             ]
         },
         {
-            "node": 30,
+            "node": 32,
             "player": "false",
             "clueGiven": 0,
             "messages": [
@@ -379,11 +399,11 @@
                 "go talk to ppl till you find your s e c r e t  b o y"
             ],
             "branch": [
-                31
+                33
             ]
         },
         {
-            "node": 31,
+            "node": 33,
             "player": "true",
             "clueGiven": 0,
             "options": [
@@ -393,7 +413,7 @@
                 0
             ],
             "branch": [
-                32
+                34
             ]
         }
     ]

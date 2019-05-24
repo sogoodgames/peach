@@ -139,6 +139,10 @@ public class Chat {
 
     // ------------------------------------------------------------------------
     public void VisitMessage (Message m, bool force) {
+        if(visitedMessages == null || m == null) {
+            return;
+        }
+        
         // if we're looping back to a multiple-answer question,
         // don't add it again
         if(!force && visitedMessages.Contains(m) && m.Options.Length > 1) {
