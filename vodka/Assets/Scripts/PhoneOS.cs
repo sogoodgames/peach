@@ -30,7 +30,8 @@ public enum ClueID {
     JinPhone = 10,
     MichaelPhone = 11,
     MelodyPhone = 12,
-    Shoe = 13 // note 1
+    Shoe = 13 // note 1,
+    TalkedToRiley = 14
 }
 
 public class PhoneOS : MonoBehaviour
