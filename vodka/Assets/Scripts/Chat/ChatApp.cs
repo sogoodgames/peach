@@ -255,6 +255,13 @@ public class ChatApp : App
             return;
         }
 
+        // if we've answered this question multiple times, mark this convo done
+        if(m_activeChat.VisitedMessages.FindAll(m => m.Node == message.Node).Count > 1) {
+            Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
+            m_activeChat.finished = true;
+            return;
+        }
+
         for(int i = 0; i < message.Options.Length; i++) {
             // if we've already been to this conversation option,
             // skip drawing whatever option we selected last time
