@@ -196,12 +196,23 @@ public class ChatApp : App
         // draw the next message
         Message nextMessage = m_activeChat.GetMessage(nextNode);
         if(nextMessage == null){
-            Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
-            m_activeChat.finished = true;
+            FinishConvo();
             return;
         }
         m_RunMessagesCoroutine = RunMessage(nextMessage);
         StartCoroutine(m_RunMessagesCoroutine);
+    }
+
+    // ------------------------------------------------------------------------
+    private void FinishConvo () {
+        Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
+        m_activeChat.finished = true;
+
+        if(m_activeChat.Friend == Friend.Jin) {
+            ChatAttachment.Open(PhoneOS.JinEndingPhoto, 1.5f);
+        } else if(m_activeChat.Friend == Friend.Emma) {
+            ChatAttachment.Open(PhoneOS.EmmaEndingPhoto, 1.5f);
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -257,8 +268,7 @@ public class ChatApp : App
 
         // if we've answered this question multiple times, mark this convo done
         if(m_activeChat.VisitedMessages.FindAll(m => m.Node == message.Node).Count > 1) {
-            Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
-            m_activeChat.finished = true;
+            FinishConvo();
             return;
         }
 

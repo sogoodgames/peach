@@ -49,6 +49,8 @@ public class PhoneOS : MonoBehaviour
     public List<TextAsset> ForumPostTextAssets;
     public List<Sprite> UserIconAssets;
     public List<Sprite> PhotoAssets;
+    public Sprite EmmaEndingPhoto;
+    public Sprite JinEndingPhoto;
 
     private List<Chat> m_allChats;
     private int m_chatCounter = 0; // increases every time we unlock a new chat

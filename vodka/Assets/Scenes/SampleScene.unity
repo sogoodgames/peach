@@ -4738,6 +4738,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6eeca7214294dc04c83554bae61fb03d, type: 3}
   - {fileID: 21300000, guid: 133c70a4da548c244821a1660dc11821, type: 3}
   - {fileID: 21300000, guid: 427ec03f5ee20e74a84a0b3cfdd4be99, type: 3}
+  EmmaEndingPhoto: {fileID: 21300000, guid: bf004ed6058385849bdc983613a6cec7, type: 3}
+  JinEndingPhoto: {fileID: 21300000, guid: e4303488ff57bb44fb5ab0c43a892b5e, type: 3}
 --- !u!114 &2127045480
 MonoBehaviour:
   m_ObjectHideFlags: 0
