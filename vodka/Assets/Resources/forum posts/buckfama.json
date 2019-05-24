@@ -5,8 +5,8 @@
     "body" : "lol",
     "numComments" : 1,
     "time" : 4,
-    "unlocked" : "true",
     "icon" : 9,
     "photo" : 4,
-    "imageHeight" : 10.0
+    "imageHeight" : 10.0,
+    "clueNeeded" : 0
 }

@@ -30,7 +30,10 @@ public enum ClueID {
     JinPhone = 10,
     MichaelPhone = 11,
     MelodyPhone = 12,
-    Shoe = 13 // note 1
+    Shoe = 13,
+    KylePhone = 14,
+    MattPhone = 15,
+    LucienPhone = 16
 }
 
 public class PhoneOS : MonoBehaviour
@@ -80,7 +83,7 @@ public class PhoneOS : MonoBehaviour
             // only add posts that are available
             List<ForumPostData> activePosts = new List<ForumPostData>();
             foreach(ForumPostData p in m_allForumPosts) {
-                if(p.Unlocked) {
+                if(ClueRequirementMet(p.ClueNeeded)) {
                     activePosts.Add(p);
                 }
             }
@@ -103,6 +106,9 @@ public class PhoneOS : MonoBehaviour
         {ClueID.JinPhone, "Jin"},
         {ClueID.MichaelPhone, "Michael"},
         {ClueID.MelodyPhone, "Melody"},
+        {ClueID.KylePhone, "Kyle"},
+        {ClueID.LucienPhone, "Lucien"},
+        {ClueID.MattPhone, "Matt"}
     };
 
     // ------------------------------------------------------------------------
@@ -125,7 +131,10 @@ public class PhoneOS : MonoBehaviour
             {ClueID.JinPhone, false},
             {ClueID.MichaelPhone, false},
             {ClueID.MelodyPhone, false},
-            {ClueID.Shoe, false}
+            {ClueID.Shoe, false},
+            {ClueID.KylePhone, false},
+            {ClueID.MattPhone, false},
+            {ClueID.LucienPhone, false}
         };
 
         LoadChats();
@@ -168,12 +177,20 @@ public class PhoneOS : MonoBehaviour
         }
 
         // if this is a phone number, send a new contact notif
-        // otherwise, send generic clue notif
         if(PhoneNumberClueNames.ContainsKey(id)) {
             NotificationManager.NewContactNotif(PhoneNumberClueNames[id]);
         } else {
+            // otherwise, send generic clue notif
             NotificationManager.FoundClueNotif(id); // really should send an event but meh
         }
+
+        // if it unlocks a ruddit post, send a ruddit notif
+        foreach(ForumPostData post in m_allForumPosts) {
+            if(post.ClueNeeded == id) {
+                NotificationManager.ForumPostNotif(post);
+            }
+        }
+
         m_clueLockStates[id] = true;
     }
 
@@ -231,7 +248,7 @@ public class PhoneOS : MonoBehaviour
                     Debug.LogWarning("Forum Post empty: " + textAsset.name);
                 } else {
                     // if it's unlocked from the start, increase our post counter
-                    if(post.Unlocked) {
+                    if(ClueRequirementMet(post.ClueNeeded)) {
                         post.Order = m_postCounter;
                         m_postCounter++;
                     }

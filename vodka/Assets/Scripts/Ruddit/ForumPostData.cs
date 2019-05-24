@@ -21,6 +21,9 @@ public class ForumPostData
     private ClueID m_clueGiven; // the clue given (if any)
     public ClueID ClueGiven {get{return m_clueGiven;}}
 
+    private ClueID m_clueNeeded; // unlocked from beginning
+    public ClueID ClueNeeded {get{return m_clueNeeded;}}
+
     private string m_body; // text in the post
     public string Body {get{return m_body;}}
 
@@ -29,9 +32,6 @@ public class ForumPostData
 
     private int m_time; // minutes ago it was posted
     public int Time {get{return m_time;}}
-
-    private bool m_unlocked; // unlocked from beginning
-    public bool Unlocked {get{return m_unlocked;}}
 
     private int m_icon; // icon file
     public int Icon {get{return m_icon;}}
@@ -49,10 +49,10 @@ public class ForumPostData
         m_username = post.username;
         m_title = post.title;
         m_clueGiven = post.clueGiven;
+        m_clueNeeded = post.clueNeeded;
         m_body = post.body;
         m_numComments = post.numComments;
         m_time = post.time;
-        m_unlocked = post.unlocked;
         m_icon = post.icon;
         m_photo = post.photo;
         m_imageHeight = post.imageHeight;
