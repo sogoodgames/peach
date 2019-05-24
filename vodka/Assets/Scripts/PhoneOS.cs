@@ -30,8 +30,7 @@ public enum ClueID {
     JinPhone = 10,
     MichaelPhone = 11,
     MelodyPhone = 12,
-    Shoe = 13, // note 1,
-    TalkedToRiley = 14
+    Shoe = 13
 }
 
 public class PhoneOS : MonoBehaviour
@@ -126,8 +125,7 @@ public class PhoneOS : MonoBehaviour
             {ClueID.JinPhone, false},
             {ClueID.MichaelPhone, false},
             {ClueID.MelodyPhone, false},
-            {ClueID.Shoe, false},
-            {ClueID.TalkedToRiley, false}
+            {ClueID.Shoe, false}
         };
 
         LoadChats();
