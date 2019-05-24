@@ -5,8 +5,8 @@
     "body" : "bless you all this midterm week",
     "numComments" : 6,
     "time" : 12,
-    "unlocked" : "true",
     "icon" : 7,
     "photo" : 5,
-    "imageHeight" : 10.0
+    "imageHeight" : 10.0,
+    "clueNeeded" : 0
 }

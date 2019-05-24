@@ -5,7 +5,7 @@
     "body" : "this wednesday nite! starts @ 8pm. we have a special guest MFA candidate performing tonight! :0 pls buy coffee to support our hosts~ :3",
     "numComments" : 1,
     "time" : 15,
-    "unlocked" : "true",
     "icon" : 4,
-    "photo" : -1
+    "photo" : -1,
+    "clueNeeded" : 12
 }

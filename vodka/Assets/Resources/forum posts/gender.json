@@ -1,12 +1,12 @@
 {
     "username" : "whipping_grrl",
     "title" : "LGBTQ 2nd meeting Wed, Nov 2",
-    "clueGiven" : 5,
+    "clueGiven" : 0,
     "body" : "First of all, thank you to everybody who participated in National Coming Out Day last week! Next meeting, we'll be discussing our plans for the rest of the semester. We're also going to have the chair of the Gender Studies department come talk about the new class!",
     "numComments" : 5,
     "time" : 4,
-    "unlocked" : "true",
     "icon" : 8,
     "photo" : 6,
-    "imageHeight" : 10.0
+    "imageHeight" : 10.0,
+    "clueNeeded" : 0
 }

@@ -5,8 +5,8 @@
     "body" : "ewwww",
     "numComments" : 29,
     "time" : 2,
-    "unlocked" : "true",
     "icon" : 2,
     "photo" : 2,
-    "imageHeight" : 5.0
+    "imageHeight" : 5.0,
+    "clueNeeded" : 1
 }
