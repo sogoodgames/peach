@@ -9,6 +9,7 @@ public class MessageSerializable {
     public string[] messages; // the text for the messages sent
     public int image = -1;
     public float imageHeight;
+    public float imageWidth;
 
     // all of the following map by index
     public string[] options; // the text options
