@@ -42,9 +42,13 @@ public class Message {
     private int image;
     public int Image {get{return image;}}
 
-    // the height delta of the attached image
+    // the height of the image in pixels
     private float imageHeight;
     public float ImageHeight {get{return imageHeight;}}
+
+    // the width of the image in pixels
+    private float imageWidth;
+    public float ImageWidth {get{return imageWidth;}}
 
     // ------------------------------------------------------------------------
     // Methods
@@ -59,6 +63,7 @@ public class Message {
         branch = serializedMessage.branch;
         image = serializedMessage.image;
         imageHeight = serializedMessage.imageHeight;
+        imageWidth = serializedMessage.imageWidth;
 
         OptionSelection = -1;
     }

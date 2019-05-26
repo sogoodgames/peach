@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class ChatAttachment : MonoBehaviour {
     public Image Image;
 
-    public void Open (Sprite img, float height) {
+    public void Open (Sprite img, float width, float height) {
         Image.sprite = img;
         Image.SetNativeSize();
-        Image.rectTransform.sizeDelta *= height;
+        Image.rectTransform.sizeDelta = new Vector2(width, height);
         gameObject.SetActive(true);
     }
     

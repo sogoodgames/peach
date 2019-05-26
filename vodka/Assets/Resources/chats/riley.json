@@ -118,7 +118,8 @@
                 11
             ],
             "image" : 3,
-            "imageHeight" : 5.0
+            "imageHeight" : 1502,
+            "imageWidth" : 978.5
         },
         {
             "node": 11,

@@ -231,9 +231,9 @@ public class ChatApp : App
 
         // these should be events
         if(m_activeChat.Friend == Friend.Jin) {
-            ChatAttachment.Open(PhoneOS.JinEndingPhoto, 1.5f);
+            ChatAttachment.Open(PhoneOS.JinEndingPhoto, 1080, 810);
         } else if(m_activeChat.Friend == Friend.Emma) {
-            ChatAttachment.Open(PhoneOS.EmmaEndingPhoto, 1.5f);
+            ChatAttachment.Open(PhoneOS.EmmaEndingPhoto, 1078, 1437);
         }
     }
 
@@ -274,7 +274,7 @@ public class ChatApp : App
             return;
         }
 
-        ChatAttachment.Open(PhoneOS.PhotoAssets[message.Image], message.ImageHeight);
+        ChatAttachment.Open(PhoneOS.PhotoAssets[message.Image], message.ImageWidth, message.ImageHeight);
     }
 
     // ------------------------------------------------------------------------
