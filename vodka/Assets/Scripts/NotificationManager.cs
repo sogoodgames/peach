@@ -37,9 +37,11 @@ public class NotificationManager : MonoBehaviour
 
     // internal
     private Queue<NotifInfo> m_notificationQueue;
+    private AudioSource notifSound;
 
     void Start () {
         m_notificationQueue = new Queue<NotifInfo>();
+        notifSound = GetComponent<AudioSource>();
     }
 
     void Update () {
@@ -71,6 +73,8 @@ public class NotificationManager : MonoBehaviour
         Button.onClick.RemoveAllListeners();
         Button.onClick.AddListener(delegate{PhoneOS.OpenApp(notif.app);});
         NotificationUI.SetActive(true);
+
+        notifSound.Play();
     }
 
     private void QueueNotif (Sprite sprite, string text, App app) {
