@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
   Icon: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
+  DoSlideAnimation: 1
   ForumPostParent: {fileID: 1802540390}
   ForumPostPrefab: {fileID: 7251587346829470753, guid: d96fa02a29277da4c93da4a83d2a95a2,
     type: 3}
@@ -2514,8 +2515,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1087794026}
   m_HandleRect: {fileID: 1087794025}
   m_Direction: 2
-  m_Value: 1.0000021
-  m_Size: 0.96232975
+  m_Value: 1.0000043
+  m_Size: 0.9623299
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3160,7 +3161,7 @@ RectTransform:
   m_Father: {fileID: 78760188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.037670255}
+  m_AnchorMin: {x: 0, y: 0.037670076}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3552,6 +3553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
   Icon: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
+  DoSlideAnimation: 1
   ChatSelectionScreen: {fileID: 172776188}
   ChatScreen: {fileID: 557253474}
   ChatButtonsParent: {fileID: 7470853908441363795}
@@ -3661,6 +3663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
   Icon: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
+  DoSlideAnimation: 1
   NotesParent: {fileID: 1920286767}
   NotePrefab: {fileID: 6879748729205006902, guid: 73c6ec9a89b42e148a09cbf936b1f5e9,
     type: 3}
@@ -4820,6 +4823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
   Icon: {fileID: 21300000, guid: 0e8ca839e49570f4ca2bd52841d8dd5e, type: 3}
+  DoSlideAnimation: 0
 --- !u!1 &1708944825
 GameObject:
   m_ObjectHideFlags: 0
@@ -5715,6 +5719,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 427ec03f5ee20e74a84a0b3cfdd4be99, type: 3}
   EmmaEndingPhoto: {fileID: 21300000, guid: bf004ed6058385849bdc983613a6cec7, type: 3}
   JinEndingPhoto: {fileID: 21300000, guid: e4303488ff57bb44fb5ab0c43a892b5e, type: 3}
+  AppAnimationSpeed: 2000
+  AppStartX: 1080
 --- !u!114 &2127045480
 MonoBehaviour:
   m_ObjectHideFlags: 0
