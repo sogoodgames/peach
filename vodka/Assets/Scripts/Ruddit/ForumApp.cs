@@ -53,9 +53,8 @@ public class ForumApp : App
         }
     }
 
-    public override void Close() { 
-        base.Close();
-
+    public override void OnCloseAnimationFinished () {
+        base.OnCloseAnimationFinished();
         foreach(Transform t in ForumPostParent.transform) {
             Destroy(t.gameObject);
         }

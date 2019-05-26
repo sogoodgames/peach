@@ -52,6 +52,9 @@ public class PhoneOS : MonoBehaviour
     public Sprite EmmaEndingPhoto;
     public Sprite JinEndingPhoto;
 
+    public float AppAnimationSpeed = 2000.0f;
+    public float AppStartX = 1080.0f;
+
     private List<Chat> m_allChats;
     private int m_chatCounter = 0; // increases every time we unlock a new chat
     private App m_activeApp;

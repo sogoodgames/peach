@@ -26,8 +26,8 @@ public class NotesApp : App
         PopulateNotes(); 
     }
 
-    public override void Close() { 
-        base.Close();
+    public override void OnCloseAnimationFinished () {
+        base.OnCloseAnimationFinished();
         foreach(Transform child in NotesParent.transform) {
             Destroy(child.gameObject);
         }
