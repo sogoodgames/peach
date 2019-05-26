@@ -7,7 +7,7 @@ public abstract class App : MonoBehaviour
     public bool DoSlideAnimation = true;
 
     protected bool animate;
-    private float animSecLeft;
+    private float animTime;
     private int xDir;
     private bool waitForClose;
 
@@ -17,7 +17,13 @@ public abstract class App : MonoBehaviour
 
     protected virtual void Update () {
         if(animate) {
-            transform.Translate(xDir * PhoneOS.AppAnimationSpeed * Time.deltaTime, 0, 0);
+            float animTimeLinear = animTime / PhoneOS.AppAnimationTime;
+            float animCurve = PhoneOS.AppAnimationCurve.Evaluate(animTimeLinear);
+            transform.Translate(
+                xDir * animCurve * PhoneOS.AppAnimationSpeed * Time.deltaTime,
+                0, 0
+            );
+            animTime += Time.deltaTime;
 
             bool reachedDestination = false;
             if(waitForClose) {
@@ -63,12 +69,14 @@ public abstract class App : MonoBehaviour
 
     public void PlaySlideInAnimation () {
         animate = true;
+        animTime = 0;
         transform.localPosition = new Vector3(PhoneOS.AppStartX, transform.localPosition.y, transform.localPosition.z);
         xDir = -1;
     }
 
     public void PlaySlideOutAnimation () {
         animate = true;
+        animTime = 0;
         waitForClose = true;
         xDir = 1;
     }

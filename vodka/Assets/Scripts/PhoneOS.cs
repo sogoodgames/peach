@@ -52,7 +52,9 @@ public class PhoneOS : MonoBehaviour
     public Sprite EmmaEndingPhoto;
     public Sprite JinEndingPhoto;
 
-    public float AppAnimationSpeed = 2000.0f;
+    public AnimationCurve AppAnimationCurve;
+    public float AppAnimationSpeed = 2000;
+    public float AppAnimationTime = 0.5f;
     public float AppStartX = 1080.0f;
 
     private List<Chat> m_allChats;
