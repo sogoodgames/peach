@@ -25,6 +25,10 @@ public class ChatApp : App
     public ScrollRect ChatBubblesScrollRect;
     public ChatAttachment ChatAttachment;
 
+    //Audio
+    public AudioSource typingSFX;
+    public AudioSource messageSFX;
+
     // internal
     private Chat m_activeChat;
     private bool m_needsScroll;
@@ -372,6 +376,8 @@ public class ChatApp : App
             yield return new WaitForSeconds(t);
             //Debug.Log("drawing line: " + i);
 
+            messageSFX.Play();
+
             DrawChatBubble(message, i, prefab);
 
             m_needsScroll = true;
@@ -389,7 +395,9 @@ public class ChatApp : App
 
     // ------------------------------------------------------------------------
     private void SelectOption (Message message, int option) {
-        if(animate) {
+        typingSFX.Play();
+
+        if (animate) {
             return;
         }
         
