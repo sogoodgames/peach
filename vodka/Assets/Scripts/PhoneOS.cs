@@ -43,6 +43,8 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     public NotificationManager NotificationManager;
     public NotesApp NotesApp;
+    public ChatApp ChatApp;
+    public GameObject ReturnButton;
     public List<App> Apps;
     public App HomeApp;
     public List<TextAsset> ChatTextAssets;
@@ -147,6 +149,18 @@ public class PhoneOS : MonoBehaviour
         LoadChats();
         LoadForumPosts();
     }
+
+    void OnEnable () {
+        Chat rileyChat = m_allChats[0];
+        foreach(Chat c in m_allChats) {
+            if(c.Friend == Friend.Riley) {
+                rileyChat = c;
+                break;
+            }
+        }
+        ChatApp.OpenChat(rileyChat);
+        m_activeApp = ChatApp;
+    }
     
     // ------------------------------------------------------------------------
     // Methods: Phone navigation
@@ -162,6 +176,7 @@ public class PhoneOS : MonoBehaviour
         CloseAllApps();
         HomeApp.Open();
         m_activeApp = HomeApp;
+        ReturnButton.SetActive(false);
     }
 
     // ------------------------------------------------------------------------

@@ -71,6 +71,7 @@ public class ChatApp : App
 
     // ------------------------------------------------------------------------
     public override void OnCloseAnimationFinished () {
+        m_activeChat = null;
         base.OnCloseAnimationFinished();
         CloseChatSelection();
         CloseChat();
@@ -87,7 +88,8 @@ public class ChatApp : App
             CloseChat();
             OpenChatSelection();
         } else {
-            PhoneOS.GoHome();
+            CloseChatSelection();
+            OpenChat(m_activeChat);
         }
     }
 
@@ -138,6 +140,8 @@ public class ChatApp : App
         if(animate) {
             return;
         }
+
+        PhoneOS.ReturnButton.SetActive(true);
 
         CloseChatSelection();
         m_activeChat = c;
@@ -225,6 +229,7 @@ public class ChatApp : App
         Debug.Log("Reached end of convo at node " + m_activeChat.GetLastVisitedMessage().Node);
         m_activeChat.finished = true;
 
+        // these should be events
         if(m_activeChat.Friend == Friend.Jin) {
             ChatAttachment.Open(PhoneOS.JinEndingPhoto, 1.5f);
         } else if(m_activeChat.Friend == Friend.Emma) {
@@ -446,7 +451,6 @@ public class ChatApp : App
         foreach(Transform child in ChatOptionsParent.transform) {
             Destroy(child.gameObject);
         }
-        m_activeChat = null;
         ChatScreen.SetActive(false);
     }
 
