@@ -70,6 +70,7 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     public override void Open() {
         base.Open();
+        PhoneOS.ReturnButton.SetActive(true);
         // always reset to chat selection bc i'm lazy lol
         OpenChatSelection();
     }
@@ -77,6 +78,7 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     public override void OnCloseAnimationFinished () {
         m_activeChat = null;
+        PhoneOS.ReturnButton.SetActive(false);
         base.OnCloseAnimationFinished();
         CloseChatSelection();
         CloseChat();
@@ -92,9 +94,11 @@ public class ChatApp : App
         if(ChatScreen.activeInHierarchy) {
             CloseChat();
             OpenChatSelection();
-        } else {
+        } else if(m_activeChat != null) {
             CloseChatSelection();
             OpenChat(m_activeChat);
+        } else {
+            Close();
         }
     }
 
@@ -142,11 +146,13 @@ public class ChatApp : App
 
     // ------------------------------------------------------------------------
     public void OpenChat (Chat c) {
+        if(c == null) {
+            Debug.LogError("Trying to open chat with null chat");
+            return;
+        }
         if(animate) {
             return;
         }
-
-        PhoneOS.ReturnButton.SetActive(true);
 
         CloseChatSelection();
         m_activeChat = c;

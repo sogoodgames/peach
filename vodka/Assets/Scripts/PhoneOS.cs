@@ -176,7 +176,6 @@ public class PhoneOS : MonoBehaviour
         CloseAllApps();
         HomeApp.Open();
         m_activeApp = HomeApp;
-        ReturnButton.SetActive(false);
     }
 
     // ------------------------------------------------------------------------
