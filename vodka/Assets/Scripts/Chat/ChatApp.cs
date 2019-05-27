@@ -29,6 +29,11 @@ public class ChatApp : App
     public AudioSource typingSFX;
     public AudioSource messageSFX;
 
+    //Message timing
+    public float SkipCooldown = 0.5f;
+    public float MaxTimeBetweenMessages = 2f;
+    private float timeSinceLastMessage = 0f;
+
     // internal
     private Chat m_activeChat;
     private bool m_needsScroll;
@@ -247,6 +252,8 @@ public class ChatApp : App
             ChatBubblesParent
         ) as GameObject;
 
+        timeSinceLastMessage = 0f;
+
         // find ChatBubbleUI
         ChatBubbleUI chatBubbleUi = bubble.GetComponent<ChatBubbleUI>();
         if(!chatBubbleUi) {
@@ -378,14 +385,30 @@ public class ChatApp : App
                 (message.Player && i == 0)) {
                 t = 0;
             }
-            yield return new WaitForSeconds(t);
+            //yield return new WaitForSeconds(t);
             //Debug.Log("drawing line: " + i);
 
-            messageSFX.Play();
+            while(timeSinceLastMessage < t)
+            {
+                if (Input.GetButtonDown("Fire1") && timeSinceLastMessage > SkipCooldown)
+                {
+                    messageSFX.Play();
+                    DrawChatBubble(message, i, prefab);
+                    m_needsScroll = true;
+                    break;
+                }
+                timeSinceLastMessage += Time.deltaTime;
+                yield return null;
+            }
 
-            DrawChatBubble(message, i, prefab);
+            if(timeSinceLastMessage >= t)
+            {
+                messageSFX.Play();
 
-            m_needsScroll = true;
+                DrawChatBubble(message, i, prefab);
+
+                m_needsScroll = true;
+            }
         }
     }
 
