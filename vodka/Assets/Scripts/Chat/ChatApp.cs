@@ -250,7 +250,7 @@ public class ChatApp : App
         // these should be events
         if(m_activeChat.Friend == Friend.Jin) {
             ChatAttachment.Open(PhoneOS.JinEndingPhoto/*, 1080, 810*/);
-        } else if(m_activeChat.Friend == Friend.Emma) {
+        } else if(m_activeChat.Friend == Friend.Emma && m_activeChat.GetLastVisitedMessage().Node == 16) {
             ChatAttachment.Open(PhoneOS.EmmaEndingPhoto/*, 1078, 1437*/);
         }
     }
