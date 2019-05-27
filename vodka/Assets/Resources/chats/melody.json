@@ -1,7 +1,7 @@
 {
     "friend" : "6",
     "clueNeeded" : 12,
-    "icon" : 14,
+    "icon" : 13,
     "messages" : [
         {
             "node": 0,
@@ -165,7 +165,7 @@
             "clueGiven": 0,
             "messages": [
                 "is this you dressed as a cow??",
-                "who’s the one in the wonder woman costume?"
+                "who’s the one in the captain marvel costume?"
             ],
             "branch": [
                 13
