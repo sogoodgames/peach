@@ -166,11 +166,18 @@ public class ChatApp : App
     // ------------------------------------------------------------------------
     // Methods : Conversation running
     // ------------------------------------------------------------------------
-    // i know this creates a lot of duplicated code,
+    // i know this creates some duplicated code,
     // but avoiding the coroutines is a lot more convienent 
     // for just wanting to draw all of the read messages with no delay
     private void FillChatWithVisitedMessages () { 
         foreach(Message message in m_activeChat.VisitedMessages) {
+            // record any clues found
+            // in case the player missed them last time
+            if(message.ClueGiven != ClueID.NoClue) {
+                PhoneOS.FoundClue(message.ClueGiven);
+            }
+
+            // draw the message
             if(message.Player) {
                 if(message.HasOptions()) {
                     if(message.MadeSelection()) {
