@@ -397,30 +397,12 @@ public class ChatApp : App
             if((message.Node == 0 && i == 0) || message.HasOptions()) {
                 t = 0;
             }
-            //yield return new WaitForSeconds(t);
+            yield return new WaitForSeconds(t);
             //Debug.Log("drawing line: " + i);
 
-            while(timeSinceLastMessage < t)
-            {
-                if (Input.GetButtonDown("Fire1") && timeSinceLastMessage > SkipCooldown)
-                {
-                    messageSFX.Play();
-                    DrawChatBubble(message, i, prefab);
-                    m_needsScroll = true;
-                    break;
-                }
-                timeSinceLastMessage += Time.deltaTime;
-                yield return null;
-            }
-
-            if(timeSinceLastMessage >= t)
-            {
-                messageSFX.Play();
-
-                DrawChatBubble(message, i, prefab);
-
-                m_needsScroll = true;
-            }
+            messageSFX.Play();
+            DrawChatBubble(message, i, prefab);
+            m_needsScroll = true;
         }
     }
 
