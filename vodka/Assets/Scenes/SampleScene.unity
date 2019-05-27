@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
-  Icon: {fileID: 21300000, guid: c1baf5234f35dfa4187dc300c3e80caa, type: 3}
+  Icon: {fileID: 21300000, guid: 53f1229e3308c214ca15d8be5edcd790, type: 3}
   DoSlideAnimation: 1
   ForumPostParent: {fileID: 1802540390}
   ForumPostPrefab: {fileID: 7251587346829470753, guid: d96fa02a29277da4c93da4a83d2a95a2,
@@ -3950,7 +3950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
-  Icon: {fileID: 21300000, guid: e0fbdcaa378ea6d4e9ed94e62dbb143d, type: 3}
+  Icon: {fileID: 21300000, guid: 618ed1ad2ad0f694fa10f618c1736e6a, type: 3}
   DoSlideAnimation: 1
   ChatSelectionScreen: {fileID: 172776188}
   ChatScreen: {fileID: 557253474}
@@ -3970,6 +3970,8 @@ MonoBehaviour:
   ChatAttachment: {fileID: 188769670}
   typingSFX: {fileID: 383916663}
   messageSFX: {fileID: 925825688}
+  SkipCooldown: 0.5
+  MaxTimeBetweenMessages: 2
 --- !u!1 &1134960046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,7 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhoneOS: {fileID: 2127045479}
-  Icon: {fileID: 21300000, guid: 4ab842bc13725294fa961f24afeef0b3, type: 3}
+  Icon: {fileID: 21300000, guid: c58b983713cdef244a2485a9f792a5d1, type: 3}
   DoSlideAnimation: 1
   NotesParent: {fileID: 1920286767}
   NotePrefab: {fileID: 6879748729205006902, guid: 73c6ec9a89b42e148a09cbf936b1f5e9,
@@ -5881,7 +5883,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
