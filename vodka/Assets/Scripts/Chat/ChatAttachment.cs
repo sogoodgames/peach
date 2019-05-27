@@ -5,6 +5,8 @@ public class ChatAttachment : MonoBehaviour {
     public Image Image;
 
     public void Open (Sprite img/*, float width, float height*/) {
+        Image.sprite = null;
+        Image.preserveAspect = false;
         Image.sprite = img;
         Image.preserveAspect = true;
         //Image.SetNativeSize();
