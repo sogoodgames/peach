@@ -364,7 +364,7 @@ public class ChatApp : App
             }
         } else {
             m_drawBubblesCoroutine = RunChatBubbles(message, FriendChatBubblePrefab);
-                yield return StartCoroutine(m_drawBubblesCoroutine);
+            yield return StartCoroutine(m_drawBubblesCoroutine);
         }
 
         // record any clues found
@@ -388,8 +388,7 @@ public class ChatApp : App
         // iterate over all of the messages in this node
         for (int i = 0; i < message.Messages.Length; i++) {
             float t = 2;
-            if((message.Node == 0 && i == 0) ||
-                (message.Player && i == 0)) {
+            if((message.Node == 0 && i == 0) || message.HasOptions()) {
                 t = 0;
             }
             //yield return new WaitForSeconds(t);
