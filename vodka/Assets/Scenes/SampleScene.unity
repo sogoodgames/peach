@@ -6191,6 +6191,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2edf400e5a059f64796a730a5c417943, type: 3}
   - {fileID: 21300000, guid: ac38b5f9a14e0154c95f7c13bbbf993f, type: 3}
   - {fileID: 21300000, guid: 4bba63758f76d4c40a2fb53d21f796c0, type: 3}
+  - {fileID: 21300000, guid: 9eaafaa671a34f549b1acb29d6841a7b, type: 3}
+  - {fileID: 21300000, guid: 8998f468b02536b439e67d3a314de493, type: 3}
+  - {fileID: 21300000, guid: f78bdb4f4d5304147a6e198d35d30bc5, type: 3}
+  - {fileID: 21300000, guid: 75e370dd492991a47a222709dd2e14c7, type: 3}
+  - {fileID: 21300000, guid: ce8e15ba658cd7d48a295ae089e23cdd, type: 3}
   PhotoAssets:
   - {fileID: 21300000, guid: c5037630f9c485e408c604e6dfcb0b6f, type: 3}
   - {fileID: 21300000, guid: e166b32984698d548ae4f83b402ae816, type: 3}
