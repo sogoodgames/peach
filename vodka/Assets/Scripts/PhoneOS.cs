@@ -41,6 +41,8 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    public bool RunFTUE = true;
+
     public NotificationManager NotificationManager;
     public NotesApp NotesApp;
     public ChatApp ChatApp;
@@ -151,15 +153,9 @@ public class PhoneOS : MonoBehaviour
     }
 
     void OnEnable () {
-        Chat rileyChat = m_allChats[0];
-        foreach(Chat c in m_allChats) {
-            if(c.Friend == Friend.Riley) {
-                rileyChat = c;
-                break;
-            }
+        if(RunFTUE) {
+            StartFTUE();
         }
-        ChatApp.OpenChat(rileyChat);
-        m_activeApp = ChatApp;
     }
     
     // ------------------------------------------------------------------------
@@ -218,7 +214,20 @@ public class PhoneOS : MonoBehaviour
     // ------------------------------------------------------------------------
     // Methods: Private
     // ------------------------------------------------------------------------
-    private void CloseAllApps() {
+    private void StartFTUE () {
+        Chat rileyChat = m_allChats[0];
+        foreach(Chat c in m_allChats) {
+            if(c.Friend == Friend.Riley) {
+                rileyChat = c;
+                break;
+            }
+        }
+        ChatApp.OpenChat(rileyChat);
+        m_activeApp = ChatApp;
+    }
+
+    // ------------------------------------------------------------------------
+    private void CloseAllApps () {
         foreach(App app in Apps) {
             if(app.IsOpen) {
                 app.Close();
@@ -227,7 +236,7 @@ public class PhoneOS : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void LoadChats() {
+    private void LoadChats () {
         m_allChats = new List<Chat>();
 
         foreach(TextAsset textAsset in ChatTextAssets) {
@@ -256,7 +265,7 @@ public class PhoneOS : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void LoadForumPosts() {
+    private void LoadForumPosts () {
         m_allForumPosts = new List<ForumPostData>();
 
         foreach(TextAsset textAsset in ForumPostTextAssets) {
